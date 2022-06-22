@@ -1,5 +1,6 @@
 # "VINO Y SE FUE"
-![](/Logo.png)
+
+![](/wireframes/ElementosOpcionales/Logo.png)
 
 
 ## Descripción de Productos
