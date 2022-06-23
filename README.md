@@ -27,3 +27,6 @@ Nuestro público apunta a gente mayor de 18 años en adelante, que tengan reside
 Estoy muy ansiosa de realizar este proyecto y estoy dispuesta a dar lo mejor de mi, para que tenga el mejor resultado :)  
 
 * Hola!! como estan? Mi nombre es Jose Diaz, tengo 20 años, actualmente estoy realizando el curso de programacion.Lo que mas me gusta hacer en mis tiempos libres es ver anime, leer mangas y hacer cosplay.
+
+* Hola, mi nombre es Karen Gonzalez, tengo 28 años, vivo en Clorinda-Fsa, me gradue de la tecnicatura de  sistemas y redes informáticas y actualmente estudio programación web, gracias al equipo de Formar y DH.
+Espero nos vaya bien a todos. Muchas bendiciones!
