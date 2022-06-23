@@ -1,9 +1,10 @@
 # "VINO Y SE FUE"
-![](/Logo.png)
+
+![](/wireframes/ElementosOpcionales/Logo.png)
 
 
 ## Descripción de Productos
-Nuestra tienda se deastacá en la venta de la mejor selección de Vinos, tanto importados como nacionales, cada uno de ellos son recomendaciones echas por grandes especialistas en la materia. Permitiendo a la gente un buen y amplio catálogo, en el cual se encontrará diferentes variendades del mismo, inluyendo Tintos, Blancos, Espumantes, Rosados y Dulces. 
+Nuestra tienda se destaca en la venta de la mejor selección de Vinos, tanto importados como nacionales, cada uno de ellos son recomendaciones echas por grandes especialistas en la materia. Permitiendo a la gente un buen y amplio catálogo, en el cual se encontrará diferentes variendades del mismo, inluyendo Tintos, Blancos, Espumantes, Rosados y Dulces. 
 
 
 ## Objetivo 
@@ -27,6 +28,8 @@ Nuestro público apunta a gente mayor de 18 años en adelante, que tengan reside
 Estoy muy ansiosa de realizar este proyecto y estoy dispuesta a dar lo mejor de mi, para que tenga el mejor resultado :)  
 
 * Hola!! como estan? Mi nombre es Jose Diaz, tengo 20 años, actualmente estoy realizando el curso de programacion.Lo que mas me gusta hacer en mis tiempos libres es ver anime, leer mangas y hacer cosplay.
+
+* Soy Cristian, 27 años de San Miguel Bs As, agradecido con la fundación por la oportunidad de capacitarme en programación. Contento con el grupo de trabajo que nos toco, todos aportamos nuestro granito de arena para que este proyecto salga de la mejor manera. En lo personal disfruto mucho juntarme con amigos, comer asado, jugar al paddle, tocar la guitarra, disfrutar y cuidar de mi familia. 
 
 * Hola, mi nombre es Karen Gonzalez, tengo 28 años, vivo en Clorinda-Fsa, me gradue de la tecnicatura de  sistemas y redes informáticas y actualmente estudio programación web, gracias al equipo de Formar y DH.
 Espero nos vaya bien a todos. Muchas bendiciones!
