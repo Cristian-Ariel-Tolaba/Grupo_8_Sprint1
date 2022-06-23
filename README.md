@@ -33,3 +33,8 @@ Estoy muy ansiosa de realizar este proyecto y estoy dispuesta a dar lo mejor de 
 
 * Hola, mi nombre es Karen Gonzalez, tengo 28 años, vivo en Clorinda-Fsa, me gradue de la tecnicatura de  sistemas y redes informáticas y actualmente estudio programación web, gracias al equipo de Formar y DH.
 Espero nos vaya bien a todos. Muchas bendiciones!
+
+* Hola !! >Me llamo Marco y tengo 21 años , hice mis estudios secundarios en la tecnica industrial de Ensenada y me recibi como tecnico informático . 
+* Ademas de programar por hobbie me gusta improvisar , leer y jugar al futbol . Le doy muchisimas gracias a la fundación por darme la oportunidad para poder formarme 
+* en una capacitación como desarrollador full stack
+
