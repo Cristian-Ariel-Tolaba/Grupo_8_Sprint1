@@ -1,10 +1,12 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 @import './general.css';
 @import './home.css';
 @import './login.css';
+@import './passwordReset.css';
 @import './productCart.css';
 @import './productDetail.css';
 @import './register.css';
+
 
 
 
