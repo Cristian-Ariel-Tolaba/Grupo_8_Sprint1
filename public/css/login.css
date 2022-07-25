@@ -1,0 +1,107 @@
+.body {
+   
+    font-family: Roboto;
+    background-color: rgb(43, 43, 43);
+    margin: 0;
+    color: #ccc;
+    text-align: center;
+    padding-bottom: 50px;
+}
+.logo{
+    width: 220px;
+    height: 200px;
+    text-align: center;   
+    display: inline-block;
+   
+}
+.body h1{
+    margin: 5px;
+    padding: 5px;
+}
+.form {
+    display: flex;
+    margin: auto;
+    width: 300px;
+    height: 240px;
+    font-size: 16px;
+    flex-direction: column;
+    padding: 10px;
+    
+}
+
+.checkbox {
+    width: 303px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+
+}
+.checkbox label{
+    display: flex;
+    position: relative;
+    top: 5px;
+
+}
+.checkbox input{
+   position: relative;
+   bottom: 3px;
+}
+
+.checkbox button{
+    border: none;
+    border-radius: 5px;
+    background-color:  rgb(99,107,121);
+    padding: 5px 25px;
+    color: white;
+
+}
+
+.form label {
+    float: left;
+    padding: 2px;
+}
+
+.form a{
+    text-decoration: none;
+    float: right;
+    color: #ccc;
+    font-size: 14px;
+    padding: 2px;
+   
+}
+.form input {
+    width: 100%;
+    outline: none;
+    margin-bottom: 8px;
+    padding: 5px;
+    font-size: 16px;
+}
+.register{
+   
+    padding-bottom: 20px;
+}
+.register p{
+    display: flex;   
+    justify-content: space-between;
+    padding-top: 20px;
+    
+}
+
+.register-btn {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(99,107,121);
+    padding: 5px 15px;
+    color: white;
+    font-size: 12px;
+    position: relative;
+    left: 2px;
+    bottom: 5px;
+}
+
+.register a {
+    text-decoration: none;
+}
+
+
