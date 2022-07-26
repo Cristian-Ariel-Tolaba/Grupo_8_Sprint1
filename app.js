@@ -11,7 +11,7 @@ app.get('/login', (req, res) => res.sendFile(path.resolve(__dirname, 'views', 'l
 app.get('/productCart', (req, res) => res.sendFile(path.resolve(__dirname, 'views', 'productCart.html')));
 app.get('/productDetail', (req, res) => res.sendFile(path.resolve(__dirname, 'views', 'productDetail.html')));
 app.get('/register', (req, res) => res.sendFile(path.resolve(__dirname, 'views', 'register.html')));
-
+app.get('/passwordReset', (req, res) => res.sendFile(path.resolve(__dirname, 'views', 'passwordReset.html')));
 
 
 app.listen(port, () => console.log('Servidor corriendo en http://localhost:' + port));
