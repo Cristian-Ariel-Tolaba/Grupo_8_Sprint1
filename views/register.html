@@ -1,14 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vino y Se Fue | Register</title>
+    <title>Vino y Se Fue | register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
-    
+    <script src="https://kit.fontawesome.com/0c10d8352a.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    register
+
+<body class="body_register">
+    <header>
+        <div id="header">
+            
+                <a href="/"><img src="/images/imagen-logo.png" alt="Logo"></a>
+         
+            <form action="">
+                <input type="text" placeholder="Buscar bebidas">
+                <button>Buscar...</button>
+            </form>
+        </div>
+        <div class="header-nav">
+            <nav>
+                <ul type="none">
+                    <li><a href="https://github.com/Cristian-Ariel-Tolaba/Grupo_8_VinoYSeFue">Redes sociales</a></li>
+                    <li><a href="/productCart">Carrito</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Registro</a></li>
+                </ul>
+            </nav>
+        </div>
+       </header>
+    <main class="main">
+        <div class="container-register">
+            <div class="form_conteiner">
+                <form action="">
+                    <h1 class="form-container---CreaTuCuenta">Crea tu cuenta:</h1>
+                    <div class="form-box">
+                        <div class="containers">
+                            <label class="fotm-label" for="Nombre"></label>
+                            <input class="form_imput" type="text" id="nombre" name="Nombre" placeholder="Nombre" />
+                            <span class="form_error">El nombre es obligatorio</span>
+                            <label class="fotm-label" for="Apellido"></label>
+                            <input class="form_imput" type="text" id="Apellido" name="Apellido"
+                                placeholder="Apellido" />
+                            <span class="form_error">El apellido es obligatorio</span>
+                            <label class="fotm-label" for="Email"> </label>
+                            <input class="form_imput" type="email" id="Email" name="Email" placeholder="Email" />
+                            <span class="form_error">El email es obligatorio</span>
+                            <label class="fotm-label" for="password"></label>
+                            <input class="form_imput" type="password" id="password" name="password"
+                                placeholder="Introduce tu contraseña" />
+                            <span class="form_error">la contraseña es obligatorio</span>
+                            <label class="fotm-label" for="password"></label>
+                            <input class="form_imput" type="password" id="password" name="password"
+                                placeholder="Confirma tu contraseña" />
+                            <span class="form_error">la contraseña debe tener entre 6 y 8 caracteres</span>
+                        </div>
+                        <div class="form-box--check">
+                            <input type="checkbox" name="Aceptar_termios" id="checkbox" />
+                            <label for="terns">Acepto los terminos y condicones</label>
+                            <span class="form_error">Debes aceptar los términos</span>
+                        </div>
+                        <div class="form-box--check">
+                            <input type="checkbox" name="Recibir_Notificaciones" id="checkbox" />
+                            <label for="checkbox">Desea recibir notificaciones al correo?</label>
+                        </div>
+                        <div class="form_box--CC">
+                            <button class="form_buttom--CrearCuenta" type="submit">
+                                Crear Cuenta
+                            </button>
+                        </div>
+                        <div class="form-box">
+                            <p class="form-link">
+                                ¿Ya estas registrado? <a href="login">Ingresa</a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="footer">
+            <img src="/images/imagen-logo.png" alt="Logo">
+            <nav>
+                <ul><a href="https://github.com/Cristian-Ariel-Tolaba/Grupo_8_VinoYSeFue">Quienes somos</a></ul>
+                <ul><a href="#">Nuestras Redes Sociales</a></ul>
+                <ul><a href="#">Contacto</a></ul>
+            </nav>
+        </div>
+        <p>Powered by Grupo 8</p>
+       </footer>
 </body>
+
 </html>

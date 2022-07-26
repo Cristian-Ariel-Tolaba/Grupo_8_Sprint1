@@ -25,13 +25,15 @@ header{
 #header input{
     border: 2px solid black;
     border-radius: 10px;
+    padding: 3px;
 }
+
 #header button{
     border: 1px solid black;
     border-radius: 10px;
     font-family: "roboto";
     font-weight: bold;
-    
+    padding: 3px;
 }
 .header-nav ul{
     display: flex;

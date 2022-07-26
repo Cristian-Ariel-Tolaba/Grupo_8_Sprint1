@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin:0px;
+} 
+/*BODY*/ 
+.body_register .form-container---CreaTuCuenta{ 
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    color: black;
+    padding-bottom: 5px;
+}
+
+.body_register .form-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.body_register  .form_imput{
+    width: 99%;
+    height: 46px;
+    letter-spacing: 2px;
+    text-align: center;
+    border-radius: 15px;
+    border: 3px solid black;
+}
+
+
+
+.body_register .form_error{
+    font-size: 14px;
+    color: rgb(105, 4, 4);
+    padding: 7px;
+}
+
+.body_register .form-box--check{
+    text-align: center;
+    font-size: 21px;
+    color: rgb(31, 30, 30);
+   
+}
+.body_register .form-box--check span{
+       display: block;
+       text-align: center;
+}
+
+.body_register .form_box--CC{
+  position: relative;
+    top: 18px;
+}
+
+.body_register .form_buttom--CrearCuenta{
+    background-color: grey;
+    color: black;
+    font-size: 20px;
+   
+}
+
+.body_register .form-link{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.body_register .main .form-box a{
+    text-decoration: none;
+    font-size: 19px;
+}
+.body_register .main .form-box p{
+    font-size: 19px;
+}
+
+/*FOOTER*/
+
+@media(min-width: 768px) {
+    
+    .body_register .form_error{
+        font-size: 16px;
+    }
+
+}
+
+@media(min-width: 1440px){
+    
+    .body_register  .form_imput{
+        font-weight: 300px
+        }
+
+    .container-register{
+       width: 70%;
+       margin: 90px;
+       border: 3px solid rgb(143, 121, 55);  
+      display: block;
+      justify-content: space-between;
+      margin: auto;
+     border-radius: 9px;
+    }
+   .form_conteiner{
+   }
+   
+    .body_register.form_error{
+        font-size: 19px;
+    }
+
+}
