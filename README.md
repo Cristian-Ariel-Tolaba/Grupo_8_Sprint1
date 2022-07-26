@@ -58,7 +58,8 @@ La herramienta que utilizamos para organizar nuestras tareas es **_"TRELLO"_**, 
 * Evaluar dificultades
 
 **_Dejar de hacer_**
-
+* Dejar pasar el tiempo
+* Quedarse con la duda 
 
 **_Hacer menos_**
 
