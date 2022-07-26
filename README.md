@@ -44,18 +44,18 @@ La herramienta que utilizamos para organizar nuestras tareas es **_"TRELLO"_**, 
 ## Retrospectiva del grupo 
 
 **_Seguir haciendo_**
-*Trabajar juntos
-*Crecer como equipo
-*Ayudarnos entre nosotros
+* Trabajar juntos
+* Crecer como equipo
+* Ayudarnos entre nosotros
 
 **_Hacer mas_**
-*Tener mas comunicacion
-*Organizarnos mejor
-*Utilizar mas **TRELLO**
+* Tener mas comunicacion
+* Organizarnos mejor
+* Utilizar mas **TRELLO**
 
 **_Empezar a hacer_**
-*Realizar Dailys
-*Evaluar dificultades
+* Realizar Dailys
+* Evaluar dificultades
 
 **_Dejar de hacer_**
 
