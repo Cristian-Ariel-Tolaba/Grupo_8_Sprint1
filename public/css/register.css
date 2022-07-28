@@ -101,7 +101,7 @@
 
   
   .submitBtn:hover {
-    background-color: #9867C5;
+    background-color: #985dcf;
     transform: translateY(-2px);
   }
   
@@ -115,7 +115,7 @@
   }
 
   .input:focus {
-    border: 2px solid purple;
+    border: 2px solid #691169;
   }
    
   .input:not(:placeholder-shown)+ .label {
