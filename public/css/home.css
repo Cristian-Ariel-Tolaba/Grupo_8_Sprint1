@@ -2,8 +2,9 @@
     box-sizing: border-box;
 }
 body{
-    margin: 0;
+    margin: 0;   
     background-color: rgb(143, 121, 55);
+      
 }
 
 header{

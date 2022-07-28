@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/register.css"> 
+    
     <title>Vino y Se Fue | Registro</title>
 </head>
 
 
+
+
+
+<!--
+
 <header>
+
     <div id="header">
         <img src="/images/imagen-logo.png" alt="Logo">
         <form action="">
@@ -29,46 +36,52 @@
     </div>
    </header>
 
+   -->
 
-<body>
-
-    <div class="register">
-
-        <h1>Registro</h1>
-
-        <form action="register.php" method="post">
-
-            <div>
-                <label for="username">Usuario</label>
-                <input type="text" name="username" id="username" required>
-            </div>
-
-            <div>
-                <label for="password">Contraseña</label>
-                <input type="password" name="password" id="password" required>
-            </div>
+<body class>
 
 
-            <div>
-                <label for="password2">Repetir contraseña</label>
-                <input type="password" name="password2" id="password2" required>
-            </div>
+        <div class="registroForm" >
+            <form action="" class="form">
+              <h1 class="title">Registrarse</h1>
+        
+              <div class="inputContainer"> 
+                <input type="text" class="input" placeholder="a" >
+               
+                <label class="label">Nombre</label>
+              </div>
+        
+        
+              <div class="inputContainer">
+               
+                <input type="text" class="input" placeholder="a" >
+                <label class="label">Apellido</label>
+              </div>
+        
+              <div class="inputContainer">   
+                <input type="text" class="input" placeholder="a" >
+                <label class="label">Mail</label>
+              </div>
+        
+              <div class="inputContainer">
+                    <input type="text" class="input" placeholder="a" >
+                    <label  class="label">Contraseña</label>
+               </div>
+        
+              <div class="inputContainer">
+                <input type="text" class="input" placeholder="a" >
+                <label class="label">Repetir Contraseña</label>
+              </div>
+
+              <input type="submit" class="submitBtn" value="Registrarse">
+              <input type="reset" class="submitBtn" value="Iniciar sesion">
+              
+            </form>
+          </div>
 
 
-            <div>
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required>
-            </div>
 
-            <input type="submit" value="Registrar">
-
-
-        </form>
-
-    </div>
-
-
-
+          <!--
     <footer>
         <div id="footer">
             <img src="/images/imagen-logo.png" alt="Logo">
@@ -80,7 +93,7 @@
         </div>
         <p>Powered by Grupo 8</p>
        </footer>
-       
+    -->
 
 </body>
 </html>
