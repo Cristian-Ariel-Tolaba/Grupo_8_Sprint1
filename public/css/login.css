@@ -1,35 +1,40 @@
-.body {
-   
-    font-family: Roboto;
-    background-color: rgb(43, 43, 43);
+.body-log {
+    background-image: linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)) 
+    ,url("/images/Banner.webp");
     margin: 0;
     color: #ccc;
     text-align: center;
     padding-bottom: 50px;
 }
-.logo{
-    width: 220px;
-    height: 200px;
-    text-align: center;   
-    display: inline-block;
-   
+.logo-im{
+    width: 180px;
+    height: 180px;
+    margin: 0px;   
+    display: inline-block;  
 }
-.body h1{
-    margin: 5px;
-    padding: 5px;
+.logo-img{
+    width: 90%;  
 }
-.form {
+.body-log-h1{
+    font-family: roboto;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.form-log {
     display: flex;
     margin: auto;
-    width: 300px;
+    width: 290px;
     height: 240px;
-    font-size: 16px;
+    font-size: 14px;
     flex-direction: column;
     padding: 10px;
     
 }
 
-.checkbox {
+.checkbox-log {
     width: 303px;
     height: 30px;
     display: flex;
@@ -37,54 +42,74 @@
     padding-top: 15px;
 
 }
-.checkbox label{
+.checkbox-label{
     display: flex;
     position: relative;
-    top: 5px;
+    top: 6px;
+    font-family: roboto;
+    padding: 2px;
 
 }
-.checkbox input{
+.checkbox-input{
    position: relative;
    bottom: 3px;
 }
 
-.checkbox button{
+.checkbox-buttom{
     border: none;
     border-radius: 5px;
     background-color:  rgb(99,107,121);
-    padding: 5px 25px;
+    padding: 5px 23px;
     color: white;
+    position: relative;
+    right: 12px;
+    transition: all 450ms;
 
 }
+.checkbox-buttom:hover{
+    background-color: rgb(30, 27, 36);
 
-.form label {
+}
+.checkbox-buttom-a {
+    font-family: Roboto;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+   
+}
+
+.form-label {
+    
     float: left;
     padding: 2px;
+    font-family: roboto;
 }
 
-.form a{
+.form-a{
     text-decoration: none;
     float: right;
     color: #ccc;
     font-size: 14px;
     padding: 2px;
+    font-family: roboto;
    
 }
-.form input {
-    width: 100%;
+.form-input {
+    width: 95.5%;
     outline: none;
     margin-bottom: 8px;
     padding: 5px;
-    font-size: 16px;
+    font-size: 14px;
 }
-.register{
+.register-log{
    
     padding-bottom: 20px;
 }
-.register p{
+.register-p{
     display: flex;   
     justify-content: space-between;
     padding-top: 20px;
+    font-family: roboto;
     
 }
 
@@ -93,15 +118,21 @@
     border-radius: 5px;
     background-color: rgb(99,107,121);
     padding: 5px 15px;
-    color: white;
-    font-size: 12px;
+    color: white;   
     position: relative;
-    left: 2px;
+    left: 0px;
     bottom: 5px;
+    transition: all 450ms;
 }
-
-.register a {
+.register-btn:hover {
+    background-color: rgb(30, 27, 36);
+}
+.register-a {
+    font-family: Roboto;
     text-decoration: none;
+    font-size: 14px;
+    color: white;
+   
 }
 
 

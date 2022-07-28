@@ -8,10 +8,16 @@
   background-color: rgb(43, 43, 43);
   color: #ccc;
   font-family: Roboto;
-
-  
   text-align: center;
   padding-bottom: 50px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #741974b6;
 }
 
 
@@ -89,7 +95,7 @@
   .submitBtn {
     display: block;
     margin-left: auto;
-    padding: 15px 30px;
+    padding: 12px 27px;
     border: none;
     background-color: purple;
     color: white;
