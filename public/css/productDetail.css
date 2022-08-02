@@ -102,7 +102,7 @@ footer {
 /*AVISO*/
 
 .aviso {
-    width: 320px;
+    width: 100%;
     height: 100px;
 }
 
@@ -349,7 +349,7 @@ footer {
     /*aviso*/
 
     .aviso {
-        width: 768px;
+    
         height: 167px;
         margin: 0px;
     }
@@ -456,7 +456,7 @@ footer {
     /*aviso*/
 
     .aviso {
-        width: 1024px;
+       
         height: 230px;
         margin: 0px;
     }
