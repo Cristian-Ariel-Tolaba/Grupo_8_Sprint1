@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Detalle del Producto</title>
+    <link rel="stylesheet" href="/stylesheets/productDetail.css">
+    <script src="https://kit.fontawesome.com/0c10d8352a.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,500&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Roboto:ital,wght@0,300;0,500;1,500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+
+
+        <div class="header_principal">
+
+            <div class="header_principal_logo">
+                <img src="/images/logo.png" alt="sin imagen">
+            </div>
+
+            <div class="header_principal_buscador">
+                <input type="Buscar..." id="Buscar..." placeholder="Buscar..." />
+                <button><span class="icon"><i class="fa fa-search"></i></span></button>
+            </div>
+
+            <div class="header_principal_iconos">
+
+                <div class="header_principal_burger_menu">
+                    <button>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="header_principal_sesion_carrito">
+
+                    <ul type="none">
+                        <div class="iconos">
+                            <div>
+                                <button>
+                                    <i class="fa-solid fa-user"></i>
+                                    <li><a href="/users/login">Iniciar sesion</a></li>
+                                </button>
+                            </div>
+                            <div>
+                                <button>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    <li><a href="/products/productCart">Mi Carrito</a></li>
+                                </button>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="header_principal_menu">
+            <nav>
+                <ul type="none" class="menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a>Catalogo</a></li>
+                    <li><a>Mas</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+    </header>
+
+
+
+    <main>
+        <div class="aviso">
+            <img src="/images/Banner-inicio.png" alt="">
+        </div>
+        <div class="main_principal">
+            <div class="contenedor_izquierdo">
+                <div class="contenedor_izquierdo_foto">
+                    <img src="/images/agala_foto1.jpg" alt="SinImagen">
+                </div>
+                <div class="contenedor_izquierdo_fotos_2">
+                    <div class="foto_1">
+                        <img src="/images/agala.jpeg" alt="SinImagen">
+                    </div>
+                    <div class="foto_3">
+                        <img src="/images/agala_foto3.jpg" alt="SinImagen">
+                    </div>
+                    <div class="foto_3">
+                        <img src="/images/agala_foto4.jpg" alt="SinImagen">
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor_derecho">
+                <div class="contenedor_derecho_superior">
+                    <p class="nombre">"Agala 1050"</p>
+                    <h2>$1000</h2>
+                    <p>Cantidad <input id="cantidad" type="number" min="0" max="100" name="cantidad" /></p>
+                </div>
+                <div class="contenedor_derecho_inferior">
+                    <div>
+                        <button>
+                            <p>Descripcion </p>
+                        </button>
+                        <p class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolore
+                            saepe sapiente
+                            dignissimos
+                            est, culpa ut eveniet quod qui suscipit exercitationem voluptatum nostrum explicabo rem
+                            reprehenderit corruptis numquam. Ex, beatae?
+                        </p>
+                    </div>
+                    <div class="contenedor_derecho_inferior_iconos_2">
+                        <div>
+                            <ul type="none">
+                                <li><i class="fa-solid fa-hand-holding-dollar"></i></li>
+                                <li><i class="fa-solid fa-credit-card"></i></li>
+                                <li><i class="fa-solid fa-truck-fast"></i></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>10% de Descuento</p>
+                            <p>En 3 cuotas sin Interes</p>
+                            <p>Envios gratis a todo el Pais</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cotenedor_derecho_final">
+                    <button href="/products/productCart">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+    <footer>
+        <div class="footer_principal">
+            <div>
+                <nav>
+                    <ul type="none" class="horarios">
+                        <li>
+                            <h6>Horarios de Atención</h6>
+                        </li>
+                        <li>
+                            <p>Lunes a Viernes:</p>
+                        </li>
+                        <li>
+                            <p>09:00 a 13:00</p>
+                        </li>
+                        <li>
+                            <p>16:00 a 20:00</p>
+                        </li>
+                        <li>
+                            <p>Sabados:</p>
+                        </li>
+                        <li>
+                            <p>09:00 a 13:00</p>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <nav>
+                    <ul type="none" class="contactos">
+                        <li>
+                            <h6> Contactos</h6>
+                        </li>
+                        <li>
+                            <p> Telefono : 1234-5678</p>
+                        </li>
+                        <li>
+                            <p> Whatsapp: +5491112345678</p>
+                        </li>
+                        <li>
+                            <p> Correo: VinoYSeFue@grupo8gmail.com</p>
+                        </li>
+                        <li>
+                            <p><i class="fa-solid fa-map-location-dot"></i> Av. Falsa 0123</p>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <nav>
+                    <ul type="none" class="redes">
+                        <li>
+                            <h6>Siguenos</h6>
+                        </li>
+                        <li>
+                            <p> <i class="fa-brands fa-twitter"></i> @VinoYSeFue</p>
+                        </li>
+                        <li>
+                            <p> <i class="fa-brands fa-instagram"></i> @VinoYSeFue</p>
+                        </li>
+                        <li>
+                            <p> <i class="fa-brands fa-facebook"></i> VinoYSeFue</p>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="advertencia">
+            <p>BEBER CON MODERACION. PROHIBIDA SU VENTA A MENORES DE 18 AÑOS</p>
+        </div>
+        <div class="derechos_de_autor">
+            <div class="derecho_1">
+                <p> Powered by Grupo 8</p>
+            </div>
+            <div class="derecho_2">
+                <p>© 2022 Vino y Se Fue. Todos los derechos reservados</p>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

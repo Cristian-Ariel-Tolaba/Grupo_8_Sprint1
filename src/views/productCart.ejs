@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vino y Se Fue | Carrito de compras</title>
+    <link rel="stylesheet" href="/stylesheets/productCart.css">
+    <script src="https://kit.fontawesome.com/0c10d8352a.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,500&display=swap"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Roboto:ital,wght@0,300;0,500;1,500&display=swap"rel="stylesheet">
+</head>
+
+
+<body class="body__productCart">
+ 
+   <header>
+
+
+      <div class="header_principal">
+
+          <div class="header_principal_logo">
+             <a href="/"> <img src="/images/logo.png" alt="sin imagen"></a>
+          </div>
+
+          <div class="header_principal_buscador">
+              <input type="Buscar..." id="Buscar..." placeholder="Buscar..." />
+              <button><span class="icon"><i class="fa fa-search"></i></span></button>
+          </div>
+
+          <div class="header_principal_iconos">
+
+              <div class="header_principal_burger_menu">
+                  <button>
+                      <i class="fas fa-bars"></i>
+                  </button>
+              </div>
+
+              <div class="header_principal_sesion_carrito">
+
+                  <ul type="none">
+                      <div class="iconos">
+                          <div>
+                              <button>
+                                  <i class="fa-solid fa-user"></i>
+                                  <li><a href="/users/login">Iniciar sesion</a></li>
+                              </button>
+                          </div>
+                          <div>
+                              <button>
+                                  <i class="fa-solid fa-cart-shopping"></i>
+                                  <li><a href="/products/productCart">Mi Carrito</a></li>
+                              </button>
+                          </div>
+                      </div>
+                  </ul>
+              </div>
+          </div>
+
+      </div>
+
+      <div class="header_principal_menu">
+          <nav>
+              <ul type="none" class="menu">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/">Catalogo</a></li>
+                  <li><a>Mas</a></li>
+              </ul>
+          </nav>
+      </div>
+
+
+  </header>  
+
+       <main class="cart-main">
+         <section>
+             <nav class="SubTitle">
+                 <a href="#">Carrito</a>
+                 <a href="#">Favoritos</a>
+                 <hr class="linea-sup">
+             </nav>
+             
+           
+            
+             <article class="product-container">
+                 <img src="/images/agala.jpeg" alt="Foto remeraLOL">
+                 <h2>Nombre Vino</h2>
+                 <h3>$2.100</h3>
+                 <p>por unidad $1.050</p>
+             </article>
+                 <div class="contador">
+                 <input type="number" id="number" value="1" min="1" max="100">
+                 </div>
+                 <div class="3-puntos">
+                 
+                 </div>
+                 <hr class="linea">
+ 
+             <article class="product-container">
+                 <img src="/images/cadalso.jpeg" alt="Foto pantalonG" style="width: 110px; height: 110px;">
+                 <h2>Nombre Vino</h2>
+                 <h3>$2.900</h3>
+                 <p>por unidad $1.450</p>
+             </article>
+                 <div class="contador">
+                 <input type="number" id="number" value="1" min="1" max="100">
+                 </div>
+                 <hr class="linea">
+ 
+             <article class="product-container">
+                 <img src="/images/agala.jpeg" alt="Foto remeraGOT">
+                 <h2>Nombre Vinos</h2>
+                 <h3>$2.800</h3>
+                 <p>por unidad $1.400</p>
+             </article>
+                 <div class="contador">
+                 <input type="number" id="number" value="1" min="1" max="100">
+                 </div>
+                 <hr class="linea">
+ 
+             <article class="product-container">
+                 <img src="/images/castillo.jpeg" alt="Foto mediasLOL" >
+                 <h2>Nombre Vino</h2>
+                 <h3>$3.000</h3>
+                 <p>por unidad $1.500</p>
+             </article>
+                 <div class="contador">
+                 <input type="number" id="number" value="1" min="1" max="100">
+                 </div>
+             <hr class="linea">
+             <article class="total-container">
+             <div class="total">
+             <h4>Total</h4>
+             <h5>$10.800</h5>
+             </div>
+             <button class="boton-compra">Comprar</button>
+             </article>
+         </main>
+   
+         <footer>
+            <div class="footer_principal">
+                <div>
+                    <nav>
+                        <ul type="none" class="horarios">
+                            <li>
+                                <h6>Horarios de Atención</h6>
+                            </li>
+                            <li>
+                                <p>Lunes a Viernes:</p>
+                            </li>
+                            <li>
+                                <p>09:00 a 13:00</p>
+                            </li>
+                            <li>
+                                <p>16:00 a 20:00</p>
+                            </li>
+                            <li>
+                                <p>Sabados:</p>
+                            </li>
+                            <li>
+                                <p>09:00 a 13:00</p>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <nav>
+                        <ul type="none" class="contactos">
+                            <li>
+                                <h6> Contactos</h6>
+                            </li>
+                            <li>
+                                <p> Telefono : 1234-5678</p>
+                            </li>
+                            <li>
+                                <p> Whatsapp: +5491112345678</p>
+                            </li>
+                            <li>
+                                <p> Correo: VinoYSeFue@grupo8gmail.com</p>
+                            </li>
+                            <li>
+                                <p><i class="fa-solid fa-map-location-dot"></i> Av. Falsa 0123</p>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <nav>
+                        <ul type="none" class="redes">
+                            <li>
+                                <h6>Siguenos</h6>
+                            </li>
+                            <li>
+                                <p> <i class="fa-brands fa-twitter"></i> @VinoYSeFue</p>
+                            </li>
+                            <li>
+                                <p> <i class="fa-brands fa-instagram"></i> @VinoYSeFue</p>
+                            </li>
+                            <li>
+                                <p> <i class="fa-brands fa-facebook"></i> VinoYSeFue</p>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="advertencia">
+                <p>BEBER CON MODERACION. PROHIBIDA SU VENTA A MENORES DE 18 AÑOS</p>
+            </div>
+            <div class="derechos_de_autor">
+                <div class="derecho_1">
+                    <p> Powered by Grupo 8</p>
+                </div>
+                <div class="derecho_2">
+                    <p>© 2022 Vino y Se Fue. Todos los derechos reservados</p>
+                </div>
+            </div>
+    
+        </footer>
+
+
+</body>
+</html>
