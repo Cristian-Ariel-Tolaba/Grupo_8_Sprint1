@@ -1,0 +1,39 @@
+[
+
+
+    {
+
+        "id": 1,
+        "nombre" : "Vino Cosecha Tardia",
+        "descripcion" : "Este vino proporciona al usuario una sensacion tropical con tintes a madera de roble y a cebada. El vino es de color rojo con una nota amarilla y una acidez persistente. El vino es una cosecha tardia, es decir, no se ha cosechado toda la vida del vino.",
+        "precio" : 2000 ,
+        "tipo vino" : "Tardia" ,
+        "descuento" : 0 ,
+        "stock" : 10 
+    }
+    ,
+    {
+
+        "id": 2,
+        "nombre" : "Vino Santa Filomena",
+        "descripcion" : "Este vino lleva el nombre de Santa Filomena , su sabor es delicioso y su aroma es fresco. El vino tiene un sabor clásico , un poco cítrico pero muy suave en el paladar , es un manjar de los dioses",
+        "precio" : 1000 ,
+        "tipo vino" : "Tinto" ,
+        "descuento" : 0 ,
+        "stock" : 10 
+    }
+    ,
+    {
+
+        "id": 3,
+        "nombre" : "Vino Viejo Solar",
+        "descripcion" : "Este vino cuenta con una calidad indiscutible , con el respaldo de años y años de proveernos los mejores vinos , llega viejo solar para recobrar la esperanza en los vinos de calidad media-alta",
+        "precio" : 1200 ,
+        "tipo vino" : "Tardia" ,
+        "descuento" : 0 ,
+        "stock" : 10 
+    }
+
+
+
+]

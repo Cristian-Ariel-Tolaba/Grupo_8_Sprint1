@@ -1,0 +1,39 @@
+[
+
+
+    {
+
+        "id": 1,
+        "nombre" : "Facundo",
+        "apellido" : "Perez" ,
+        "contrasena" : "123456" ,
+        "mail" : "facupp@hotmail.com" ,
+        "imagen-perfil" : "imagen-perfil-1.jpg"
+ 
+    }
+    ,
+    {
+
+        "id": 2,
+        "nombre" : "Ramiro",
+        "apellido" : "Ramirez" ,
+        "contrasena" : "123456" ,
+        "mail" : "Rami_Ramirez@hotmail.com" ,
+        "imagen-perfil" : "imagen-perfil-2.jpg"
+ 
+    }
+    ,
+    {
+
+        "id": 3,
+        "nombre" : "Gonzalo",
+        "apellido" : "Gonzalez" ,
+        "contrasena" : "123456" ,
+        "mail" : "g0nza_gonzales@hotmail.com" ,
+        "imagen-perfil" : "imagen-perfil-2.jpg"
+ 
+    }
+
+
+
+]
