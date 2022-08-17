@@ -6,6 +6,7 @@ module.exports = {
             
         });
     },
+    //Falta crear el controlador para el productCart
     productCart : (req, res) => {
         return res.render('productCart', {
             title : 'Carrito',
