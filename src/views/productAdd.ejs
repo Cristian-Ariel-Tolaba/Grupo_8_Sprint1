@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/productAdd.css">
+    <script src="https://kit.fontawesome.com/0c10d8352a.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,500&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Roboto:ital,wght@0,300;0,500;1,500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+
+        <div class="header_principal">
+
+            <div class="header_principal_logo">
+                <img src="/images/WhatsApp Image 2022-07-18 at 17.55.08.jpeg" alt="sin imagen">
+            </div>
+
+            <div class="header_principal_buscador">
+                <input type="Buscar..." id="Buscar..." placeholder="Buscar..." />
+                <button><span class="icon"><i class="fa fa-search"></i></span></button>
+            </div>
+
+            <div class="header_principal_iconos">
+
+                <div class="header_principal_burger_menu">
+                    <button>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="header_principal_sesion_carrito">
+
+                    <ul type="none">
+                        <div class="iconos">
+                            <div>
+                                <button>
+                                    <i class="fa-solid fa-user"></i>
+                                    <li>Iniciar sesion</li>
+                                </button>
+                            </div>
+                            <div>
+                                <button>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    <li>Mi Carrito</li>
+                                </button>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="header_principal_menu">
+            <nav>
+                <ul type="none" class="menu">
+                    <div>
+                        <li><a>Home</a></li>
+                    </div>
+                    <div>
+                        <li><a>Catalogo</a></li>
+                    </div>
+                    <div>
+                        <li><a>Mas</a></li>
+                    </div>
+
+                </ul>
+            </nav>
+        </div>
+
+
+    </header>
+
+    <main>
+        <div class="contenedor">
+            <div class="main_titulo">
+                <p>Crear producto</p>
+            </div>
+            <div class="main_formulario">
+                <form action="/crear">
+
+                    <div class="main_formulario_nombre">
+                        <label for="nombre">Nombre:</label></br>
+                        <input type="text" name="nombre" placeholder="Nombre del producto" id="nombre">
+                    </div>
+
+                    <div class="main_formulario_categoria">
+                        <label for="categoria">Categoría:</label></br>
+                        <input type="radio" name="categoria" value="Tinto">Tinto</br>
+                        <input type="radio" name="categoria" value="Blanco">Blanco</br>
+                        <input type="radio" name="categoria" value="Rosado">Rosado</br>
+                        <input type="radio" name="categoria" value="Espumante">Espumante</br>
+                        <input type="radio" name="categoria" value="Dulce">Dulce</br>
+                    </div>
+
+                    <div class="main_formulario_precio">
+                        <label for="precio">Precio:</label></br>
+                        <input type="number" name="price" placeholder="Precio del producto" id="precio">
+                    </div>
+
+                    <div class="main_formulario_descuento">
+                        <label for="descuento">Descuento:</label></br>
+                        <input type="number" name="discount" placeholder="Descuento del producto" id="descuento">
+                    </div>
+
+                    <div class="main_formulario_descripcion">
+                        <label for="descripcion">Descripcion:</label></br>
+                        <textarea name="descripcion" id="descripcion"></textarea>
+                    </div>
+
+                    <div class="main_formulario_imagen">
+                        <label>Imagen:</label></br>
+                        <input type="file" name="imagen" accept=".jpg" multiple>
+                    </div>
+
+                    <div class="main_formulario_button"><button>CREAR</button></div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer_principal">
+            <div>
+                <nav>
+                    <ul type="none" class="horarios">
+                        <li>
+                            <h6>Horarios de Atención</h6>
+                        </li>
+                        <li>
+                            <p>Lunes a Viernes:</p>
+                        </li>
+                        <li>
+                            <p>09:00 a 13:00</p>
+                        </li>
+                        <li>
+                            <p>16:00 a 20:00</p>
+                        </li>
+                        <li>
+                            <p>Sabados:</p>
+                        </li>
+                        <li>
+                            <p>09:00 a 13:00</p>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <nav>
+                    <ul type="none" class="contactos">
+                        <li>
+                            <h6> Contactos</h6>
+                        </li>
+                        <li>
+                            <p> Telefono : 1234-5678</p>
+                        </li>
+                        <li>
+                            <p> Whatsapp: +5491112345678</p>
+                        </li>
+                        <li>
+                            <p> Correo: VinoYSeFue@grupo8gmail.com</p>
+                        </li>
+                        <li>
+                            <p><i class="fa-solid fa-map-location-dot"></i> Av. Falsa 0123</p>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <nav>
+                    <ul type="none" class="redes">
+                        <li>
+                            <h6>Siguenos</h6>
+                        </li>
+                        <li>
+                            <p> <i class="fa-brands fa-twitter"></i> @VinoYSeFue</p>
+                        </li>
+                        <li>
+                            <p> <i class="fa-brands fa-instagram"></i> @VinoYSeFue</p>
+                        </li>
+                        <li>
+                            <p> <i class="fa-brands fa-facebook"></i> VinoYSeFue</p>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="advertencia">
+            <p>BEBER CON MODERACION. PROHIBIDA SU VENTA A MENORES DE 18 AÑOS</p>
+        </div>
+        <div class="derechos_de_autor">
+            <div class="derecho_1">
+                <p> Powered by Grupo 8</p>
+            </div>
+            <div class="derecho_2">
+                <p>© 2022 Vino y Se Fue. Todos los derechos reservados</p>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
