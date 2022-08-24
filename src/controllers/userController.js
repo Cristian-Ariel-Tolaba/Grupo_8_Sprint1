@@ -1,12 +1,12 @@
 module.exports = {
     login : (req, res) => {
-        return res.render('login', {
+        return res.render('./users/login', {
             title : 'Login',
             stylesheets: 'login.css'
         })
     },
     register : (req, res) => {
-        return res.render('register', {
+        return res.render('./users/register', {
             title : 'Register',
             stylesheets: 'register.css'
         })
