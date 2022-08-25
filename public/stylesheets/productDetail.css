@@ -248,6 +248,19 @@ footer {
     background-color: white;
 }
 
+.edistr-eliminar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.editar-eliminar button{
+    padding: 5px;
+    background-color: gray;
+    margin-bottom: 10px;
+    color: white;
+}
 
 /*FOOTER*/
 
@@ -309,7 +322,6 @@ footer {
 
 @media (min-width: 768px) {
     header {
-
         height: 100px;
         background-color: #2b2b2b
     }
@@ -320,8 +332,7 @@ footer {
     }
 
     main {
-
-        height: 850px;
+        height: 928px;
         background-image: url("/images/Banner.webp");
         background-size: 768px;
     }
@@ -363,7 +374,7 @@ footer {
 
     .main_principal {
         width: 435px;
-        height: 654px;
+        height: 730px;
         background-image: none;
         background-color: #2b2b2b;
         opacity: 0.9;
@@ -564,6 +575,18 @@ footer {
         margin-bottom: 1px;
         padding: 5px;
         background-color: white
+    }
+
+    .edistr-eliminar{
+        margin-top: 20px;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .edistar-eliminar button{
+        margin-bottom: 0px;
+        width: 120px;
+        height: 30px;
     }
 
     .footer_principal {
