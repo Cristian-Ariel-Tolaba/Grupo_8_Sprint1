@@ -53,7 +53,7 @@
                             <div>
                                 <button>
                                     <i class="fa-solid fa-cart-shopping"></i>
-                                    <li><a href="/products/productCart">Mi Carrito</a></li>
+                                    <li><a href="/products/cart">Mi Carrito</a></li>
                                 </button>
                             </div>
                         </div>
@@ -67,9 +67,6 @@
             <nav>
                 <ul type="none" class="menu">
                     <li><a href="/">Home</a></li>
-                    <li><a>Catalogo</a></li>
-                    <li><a>Mas</a></li>
-                    <li><a>Nuevo</a></li>
                 </ul>
             </nav>
         </div>
@@ -134,15 +131,17 @@
                     </div>
                 </div>
                 <div class="cotenedor_derecho_final">
-                    <button href="/products/productCart">Añadir al carrito</button>
+                    <button href="/products/cart">Añadir al carrito</button>
                 </div>
 
                 <div class="editar-eliminar">
                     <div>
-                        <button>Editar</button>
+                        <button><a href="/products/edit/:id " class=" ">Editar</a></button>
                     </div>
                     <div>
-                        <button>Eliminar</button>
+                        <form action="/products/delete/:id?_method=DELETE" method="POST">
+                            <button type="submit" class=" ">Eliminar</button>
+                        </form>
                     </div>
                 </div>
 

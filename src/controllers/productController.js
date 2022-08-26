@@ -1,46 +1,99 @@
-const fs = require('fs');
-const path = require('path');
+const {loadProducts, storeProducts} = require('../data/productsModule');
 
-const productos = require('../data/vinos.json');
-const usuarios = require('../data/usuarios.json');
-
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
-    productDetail : (req, res) => {
+    index: (req, res) => {
+        const products = loadProducts();
+        return res.render('index', {          
+            products, 
+            toThousand
+        })
+    },
 
-        const productos = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'vinos.json')));
+    list: (req, res) => {
+        const products = loadProducts();
+        return res.render('productList', {          
+            products, 
+            toThousand
+        })
+    },
 
-        const {id} = req.params;
-        let producto = productos.find(producto => producto.id === +id)
-
+    detail: (req, res) => {
+        const products = loadProducts();
+        const product = products.find(product => product.id === +req.params.id);
         return res.render('productDetail', {
-            title : 'Detalle',
-            stylesheets: 'productDetail.css'
-            , producto
+            title: 'Detalle',
+            product,
+            toThousand
         });
     },
 
-    add : (req, res) => {
+    create: (req, res) => {
+        return res.render('productCreateForm')
+    },
 
-        return res.render('productAdd', {
-            title : 'Agregar producto'
-            
-        });
+    store: (req, res) => {
+        const {name, price, discount, description, category} = req.body
 
-    }
-    
-    ,
+        const products = loadProducts();
+        const newProduct = {
+            id: (products[products.length -1].id) + 1,
+            name:name,
+            description: description,
+            price: +price,
+            discount: +discount,
+            image: req.file ? req.file.filename : 'default-image.png',
+            category
 
-    //Falta crear el controlador para el productCart
-    productCart : (req, res) => {
-        return res.render('productCart', {
-            title : 'Carrito',
-            stylesheets: 'productCart.css'
-        
-        
+        }
+
+        const productsModify = [...products, newProduct];
+
+        storeProducts(productsModify);
+        return res.redirect('/products/list')
+    },
+
+    edit: (req, res) => {
+        const products = loadProducts();
+        const product = products.find(product => product.id === +req.params.id);
+        return res.render('productEditForm',{
+            product
+        })
+    },
+
+    update: (req, res) => {
+        const products = loadProducts();
+        const {name, price, discount, category, description} = req.body;
+
+        const productsModify = products.map(product => {
+            if(product.id === +req.params.id){
+                return {
+                    ...product,
+                    name: name,
+                    price : +price,
+                    discount : +discount,
+                    description: description,
+                    category
+                }
+            }return product
         })
 
+        storeProducts(productsModify);
+        return res.redirect('/products/detail/' +req.params.id)
+    },
 
+    destroy: (req, res) => {
+        const {id} = req.params;
+        const products = loadProducts();
 
+        const productsModify = products.filter(product => product.id !== +id);
+
+        storeProducts(productsModify);
+        return res.redirect('/products/list')
+    },
+
+    cart: (req, res) => {
+        return res.render('productCart')
     }
-}
+};

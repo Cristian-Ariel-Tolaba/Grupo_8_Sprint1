@@ -8,6 +8,4 @@ const {index} = require('../controllers/indexController')
 router
   .get('/', index);
   
-
-
 module.exports = router;
