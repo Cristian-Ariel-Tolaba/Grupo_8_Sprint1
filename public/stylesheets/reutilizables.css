@@ -1,0 +1,15 @@
+.obj-fit-cover {
+    object-fit: cover;
+}
+
+.obj-fit-contain {
+    object-fit: contain;
+}
+/* 
+:root {
+    --coloError:#ff0000
+}
+
+.text-error {
+    color:var(--coloError)!important;
+} */

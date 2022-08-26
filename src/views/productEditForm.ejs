@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vino y Se Fue | Edicion de productos</title>
     <link rel="stylesheet" href="/stylesheets/productEdit.css">
     <script src="https://kit.fontawesome.com/0c10d8352a.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,500&display=swap"
@@ -21,9 +21,10 @@
         <div class="header_principal">
 
             <div class="header_principal_logo">
-                <img src="/images/WhatsApp Image 2022-07-18 at 17.55.08.jpeg" alt="sin imagen">
+                <a href="/"><img src="/images/logo.png" alt="sin imagen"></a>
             </div>
 
+    
             <div class="header_principal_buscador">
                 <input type="Buscar..." id="Buscar..." placeholder="Buscar..." />
                 <button><span class="icon"><i class="fa fa-search"></i></span></button>
@@ -44,13 +45,13 @@
                             <div>
                                 <button>
                                     <i class="fa-solid fa-user"></i>
-                                    <li>Iniciar sesion</li>
+                                    <li><a href="/users/login">Iniciar Sesión</a></li>
                                 </button>
                             </div>
                             <div>
                                 <button>
                                     <i class="fa-solid fa-cart-shopping"></i>
-                                    <li>Mi Carrito</li>
+                                    <li><a href="/products/cart">Mi carrito</a></li>
                                 </button>
                             </div>
                         </div>
@@ -60,60 +61,40 @@
 
         </div>
 
-        <div class="header_principal_menu">
-            <nav>
-                <ul type="none" class="menu">
-                    <div>
-                        <li><a>Home</a></li>
-                    </div>
-                    <div>
-                        <li><a>Catalogo</a></li>
-                    </div>
-                    <div>
-                        <li><a>Mas</a></li>
-                    </div>
-
-                </ul>
-            </nav>
-        </div>
-
-
+ 
     </header>
 
     <main>
         <div class="contenedor">
             <div class="main_titulo">
-                <p>Editar producto</p>
+                <h5>Estás editando: <i><%= product.name %> </i></h5>
             </div>
             <div class="main_formulario">
-                <form action="/crear">
+                <form action="/products/update/<%= product.id %>?_method=PUT" method="post">
                     <div class="main_formulario_nombre">
-                        <label for="nombre">Nombre:</label></br>
-                        <input type="text" name="nombre" placeholder="Nombre del producto" id="nombre">
+                        <label for="name">Nombre del producto:</label></br>
+                        <input type="text" name="name" placeholder="Nombre del producto" id="name">
                     </div>
 
                     <div class="main_formulario_categoria">
-                        <label for="categoria">Categoría:</label></br>
-                        <input type="radio" name="categoria" value="Tinto">Tinto</br>
-                        <input type="radio" name="categoria" value="Blanco">Blanco</br>
-                        <input type="radio" name="categoria" value="Rosado">Rosado</br>
-                        <input type="radio" name="categoria" value="Espumante">Espumante</br>
-                        <input type="radio" name="categoria" value="Dulce">Dulce</br>
+                        <label for="category">Categoría:</label></br>
+                        <input type="radio" name="category" value="destacados">Destacados</br>
+                        <input type="radio" name="category" value="in-sale">Ofertas</br>
                     </div>
 
                     <div class="main_formulario_precio">
-                        <label for="precio">Precio:</label></br>
-                        <input type="number" name="price" placeholder="Precio del producto" id="precio">
+                        <label for="price">Precio del producto:</label></br>
+                        <input type="number" id="price" name="price" placeholder="Precio del producto">
                     </div>
 
                     <div class="main_formulario_descuento">
-                        <label for="descuento">Descuento:</label></br>
-                        <input type="number" name="discount" placeholder="Descuento del producto" id="descuento">
+                        <label for="discount">Descuento:</label></br>
+                        <input type="number"  id="discount" name="discount" placeholder="Descuento del producto">
                     </div>
 
                     <div class="main_formulario_descripcion">
-                        <label for="descripcion">Descripcion:</label></br>
-                        <textarea name="descripcion" id="descripcion"></textarea>
+                        <label for="description">Descripción:</label></br>
+                        <textarea name="description" id="description"></textarea>
                     </div>
 
                     <div class="main_formulario_imagen">
@@ -123,13 +104,10 @@
 
                     <div class="main_formulario_buttons">
                         <div>
-                            <button type="submit">Envíar</button>
+                            <button type="submit">Guardar</button>
                         </div>
                         <div>
                             <button type="reset">Cancelar</button>
-                        </div>
-                        <div>
-                            <button type="reset">Eliminar</button>
                         </div>
                     </div>
                 </form>

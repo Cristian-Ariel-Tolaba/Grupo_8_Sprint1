@@ -43,6 +43,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3030, () => {console.log("Estamos arrancando ñero")});
 
 module.exports = app;

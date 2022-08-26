@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,7 @@
     , initial-scale=1.0">
     <title>Detalle del Producto</title>
     <link rel="stylesheet" href="/stylesheets/productDetail.css">
+    <link rel="stylesheet" href="/stylesheets/reutilizables.css">
     <script src="https://kit.fontawesome.com/0c10d8352a.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,500&display=swap"
         rel="stylesheet">
@@ -24,7 +25,7 @@
         <div class="header_principal">
 
             <div class="header_principal_logo">
-                <img src="/images/logo.png" alt="sin imagen">
+               <a href="/"><img src="/images/logo.png" alt="sin imagen"></a>
             </div>
 
             <div class="header_principal_buscador">
@@ -63,14 +64,6 @@
 
         </div>
 
-        <div class="header_principal_menu">
-            <nav>
-                <ul type="none" class="menu">
-                    <li><a href="/">Home</a></li>
-                </ul>
-            </nav>
-        </div>
-
 
     </header>
 
@@ -81,39 +74,35 @@
             <img src="/images/Banner-inicio.png" alt="">
         </div>
         <div class="main_principal">
+            
             <div class="contenedor_izquierdo">
                 <div class="contenedor_izquierdo_foto">
-                    <img src="/images/agala_foto1.jpg" alt="SinImagen">
+                    <img class="obj-fit-cover" src="/images/<%= product.image %>" alt="SinImagen">
                 </div>
                 <div class="contenedor_izquierdo_fotos_2">
                     <div class="foto_1">
-                        <img src="/images/agala.jpeg" alt="SinImagen">
+                        <img class="obj-fit-cover" src="/images/agala.jpeg" alt="SinImagen">
                     </div>
                     <div class="foto_3">
-                        <img src="/images/agala_foto3.jpg" alt="SinImagen">
+                        <img class="obj-fit-cover" src="/images/agala_foto3.jpg" alt="SinImagen">
                     </div>
                     <div class="foto_3">
-                        <img src="/images/agala_foto4.jpg" alt="SinImagen">
+                        <img class="obj-fit-cover" src="/images/agala_foto4.jpg" alt="SinImagen">
                     </div>
                 </div>
             </div>
             <div class="contenedor_derecho">
                 <div class="contenedor_derecho_superior">
-                    <p class="nombre">"Agala 1050"</p>
-                    <h2>$1000</h2>
-                    <p>Cantidad <input id="cantidad" type="number" min="0" max="100" name="cantidad" /></p>
+                    <p class="nombre"><%= product.name %></p>
+                    <h2>$<%= toThousand(product.price) %></h2>
+                    
+                    <p>Cantidad <input id="unit" type="number" min="0" max="100" name="unit"></p>
                 </div>
                 <div class="contenedor_derecho_inferior">
                     <div>
-                        <button>
-                            <p>Descripcion </p>
-                        </button>
-                        <p class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolore
-                            saepe sapiente
-                            dignissimos
-                            est, culpa ut eveniet quod qui suscipit exercitationem voluptatum nostrum explicabo rem
-                            reprehenderit corruptis numquam. Ex, beatae?
-                        </p>
+                      
+                        <p class="descripcion"><%= product.description %> </p>
+                       
                     </div>
                     <div class="contenedor_derecho_inferior_iconos_2">
                         <div>
@@ -124,7 +113,7 @@
                             </ul>
                         </div>
                         <div>
-                            <p>10% de Descuento</p>
+                            <p><%= product.discount > 0 ? product.discount + "% de Descuento" : null%></p>
                             <p>En 3 cuotas sin Interes</p>
                             <p>Envios gratis a todo el Pais</p>
                         </div>
@@ -136,10 +125,10 @@
 
                 <div class="editar-eliminar">
                     <div>
-                        <button><a href="/products/edit/:id " class=" ">Editar</a></button>
+                        <button><a href="/products/edit/<%= product.id %>" class="">Editar</a></button>
                     </div>
                     <div>
-                        <form action="/products/delete/:id?_method=DELETE" method="POST">
+                        <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
                             <button type="submit" class=" ">Eliminar</button>
                         </form>
                     </div>

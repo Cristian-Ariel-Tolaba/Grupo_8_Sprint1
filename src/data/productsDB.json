@@ -4,7 +4,7 @@
       "name": "Agala",
       "price": 2100,
       "discount": 0,
-      "category": "visited",
+      "category": "destacados",
       "description": "Es un vino que expresa muy bien el objetivo que persiguen con estos vinos, ya que tiene una nariz fragante y floral, con gran expresión de frutos del bosque y notas algo balsámicas. Su boca es de cuerpo medio y refrescante, frutal en su recorrido y deja para el final unos toques minerales y ciertos recuerdos a hierbas aromáticas.",
       "image": "agala.jpeg"
    },
@@ -22,7 +22,7 @@
       "name": "Cadalso",
       "price": 3080,
       "discount": 0,
-      "category": "visited",
+      "category": "destacados",
       "description": "Un vino que te apetece tomar con la mente abierta, sin patrones preconcebidos. Aromático, con notas a ciruela pasa, violetas y especias como el clavo y la pimienta negra. Enamora con el paso en boca, con sus característicos toques minerales y el tanino amable.",
       "image": "cadalso.jpeg"
    },
@@ -40,7 +40,7 @@
       "name": "Do Conca",
       "price": 3100,
       "discount": 0,
-      "category": "visited",
+      "category": "destacados",
       "description": "Se expresa a su manera, ya sin complejos, ligero y delicado en cuerpo y en color, muy frutal y floral en nariz, sorprendente elegante y complejo en boca, con muchos frutos rojos, más notas florales y amplios especiados.",
       "image": "do-conca.jpeg"
    },
@@ -58,29 +58,17 @@
       "name": "Loba",
       "price": 800,
       "discount": 0,
-      "category": "visited",
+      "category": "destacados",
       "description": "Un vino con carácter de territorio, lleno de frutas rojas maduras, profundidad de tierra y un toque de violetas. El paladar no es masivo pero está ligado con firmeza por su carácter ígneo y una calidad remarcable.",
       "image": "loba.jpeg"
    },
    {
       "id": 8,
-      "name": "Terrarazo",
+      "name": "Terrerazo",
       "price": 2100,
       "discount": 0,
       "category": "in-sale",
-      "description": "Se expresa a su manera, ya sin complejos, ligero y delicado en cuerpo y en color, muy frutal y floral en nariz, sorprendente elegante y complejo en boca, con muchos frutos rojos, más notas florales y amplios especiados.",
-      "image": "terrarazo.jpeg"
-   },
-   {
-      "id": 9,
-      "price": 21000,
-      "discount": 5,
-      "image": "default-image.png"
-   },
-   {
-      "id": 10,
-      "price": 14699,
-      "discount": 5,
-      "image": "default-image.png"
+      "description": "Es un vino que expresa muy bien el objetivo que persiguen con estos vinos, ya que tiene una nariz fragante y floral, con gran expresión de frutos del bosque y notas algo balsámicas. Su boca es de cuerpo medio y refrescante, frutal en su recorrido y deja para el final unos toques minerales y ciertos recuerdos a hierbas aromáticas.",
+      "image": "terrerazo.jpeg"
    }
 ]
