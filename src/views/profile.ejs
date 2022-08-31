@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head',{ title: 'Home',stylesheets: 'profile.css'})
+ %> 
+<body>
+    <%- include('./partials/header') %> 
+   <main>
+    <div class="mi_perfil" >
+
+        <div class="mi_perfil_foto">
+            <img src="/images/blank-profile-picture-973460_640.png" alt="Insertar Imagen">
+        </div>
+        <div>
+            <h1 >Mi Perfil</h1>
+        </div>
+        <div class="mi_perfil_informacion">
+
+            <form action="" class="form">
+
+                <div class="inputContainer">
+                   <label class="label">Nombre:</label></br>
+                    <input type="text" class="input" placeholder="a">
+                    
+                </div>
+
+                <div class="inputContainer">
+                    <label class="label">Apellido:</label></br>
+                    <input type="text" class="input" placeholder="a">
+                    
+                </div>
+
+                <div class="inputContainer">
+                    <label class="label">Mail:</label></br>
+                    <input type="text" class="input" placeholder="a">
+                    
+                </div>
+
+                <div class="inputContainer">
+                    <label class="label">Telefono:</label></br>
+                    <input type="tel" class="input" placeholder="12-3456-7890">
+                    
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+   </main>
+   
+   <%- include('./partials/footer') %> 
+
+</body>
+</html>

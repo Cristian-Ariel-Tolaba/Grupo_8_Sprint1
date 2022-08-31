@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+}
+
+/*main*/
+
+main {
+    height: 550px;
+    background-image: url("/images/Banner.webp");
+    background-size: 600px;
+    background-position: center;
+}
+
+.mi_perfil {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mi_perfil_foto img {
+    width: 150px;
+    border-radius: 80px;
+}
+
+h1 {
+    margin: 0px;
+}
+
+.inputContainer {
+    color: white;
+}
+
+.inputContainer input {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+    main {
+        height: 700px;
+    }
+
+    .mi_perfil {
+        backdrop-filter: blur(10px);
+        height: 700px;
+        width: 500px;
+        margin-left: 150px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .mi_perfil {
+        margin-left: 260px;
+    }
+
+    .inputContainer label {
+        font-size: 20px;
+    }
+
+    .inputContainer input {
+        width: 300px;
+    }
+}
