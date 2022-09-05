@@ -69,37 +69,37 @@
                 <h5>Formulario de creación de productos</h5>
             </div>
             <div class="main_formulario">
-                <form action="/products/store" method="POST">
+                <form action="/products/store" method="POST" enctype="multipart/form-data">
 
                     <div class="main_formulario_nombre">
-                        <label for="name">Nombre del producto:</label></br>
+                        <label for="name">Nombre del producto</label></br>
                         <input type="text" id="name" name="name" placeholder="Nombre del producto">
                     </div>
 
                     <div class="main_formulario_categoria">
-                        <label for="category">Categoría:</label></br>
+                        <label for="category">Categoría</label></br>
                         <input type="radio" name="category" value="destacados">Destacados</br>
                         <input type="radio" name="category" value="in-sale">Ofertas</br>
                     </div>
 
                     <div class="main_formulario_precio">
-                        <label for="price">Precio del producto:</label></br>
+                        <label for="price">Precio del producto</label></br>
                         <input type="number" id="price" name="price" placeholder="Precio del producto">
                     </div>
 
                     <div class="main_formulario_descuento">
-                        <label for="discount">Descuento:</label></br>
+                        <label for="discount">Descuento</label></br>
                         <input type="number" id="discount" name="discount" placeholder="Descuento del producto">
                     </div>
 
                     <div class="main_formulario_descripcion">
-                        <label for="description">Descripción:</label></br>
+                        <label for="description">Descripción</label></br>
                         <textarea name="description" id="description"></textarea>
                     </div>
 
                     <div class="main_formulario_imagen">
-                        <label>Imagen:</label></br>
-                        <input type="file" name="imagen" accept=".jpg" multiple>
+                        <label>Agregar imagen</label></br>
+                        <input type="file" name="image"  id="image" accept=".jpg" multiple>
                     </div>
 
                     <div class="main_formulario_button"><button>CREAR</button></div>

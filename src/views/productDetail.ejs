@@ -94,28 +94,31 @@
             <div class="contenedor_derecho">
                 <div class="contenedor_derecho_superior">
                     <p class="nombre"><%= product.name %></p>
-                    <h2>$<%= toThousand(product.price) %></h2>
+
+                    <% if (product.discount>0) { %>
+                    <h3>$<%=toThousand(product.price)%></h3>
                     
-                    <p>Cantidad <input id="unit" type="number" min="0" max="100" name="unit"></p>
+                    <h3>
+                        <%=product.discount%> % de descuento
+                    </h3>
+                    <% } else{%>
+                        <p>
+                            $<%=toThousand(product.price)%>
+                        </p>
+                     <% } %>
+
+
                 </div>
                 <div class="contenedor_derecho_inferior">
-                    <div>
-                      
-                        <p class="descripcion"><%= product.description %> </p>
-                       
-                    </div>
+                   
                     <div class="contenedor_derecho_inferior_iconos_2">
                         <div>
                             <ul type="none">
-                                <li><i class="fa-solid fa-hand-holding-dollar"></i></li>
-                                <li><i class="fa-solid fa-credit-card"></i></li>
-                                <li><i class="fa-solid fa-truck-fast"></i></li>
+                                <li><i class="fa-solid fa-hand-holding-dollar"></i> Pagás $<%=toThousand(product.price-(product.price * product.discount) / 100) %>
+                                </li>
+                                <li><i class="fa-solid fa-credit-card"></i> Aceptamos todas las tarjetas</li>
+                                <li><i class="fa-solid fa-truck-fast"></i> Envios a todo el país</li>
                             </ul>
-                        </div>
-                        <div>
-                            <p><%= product.discount > 0 ? product.discount + "% de Descuento" : null%></p>
-                            <p>En 3 cuotas sin Interes</p>
-                            <p>Envios gratis a todo el Pais</p>
                         </div>
                     </div>
                 </div>

@@ -1,34 +1,52 @@
 [
-    {
-
-        "id": 1,
-        "nombre" : "Facundo",
-        "apellido" : "Perez" ,
-        "contrasena" : "123456" ,
-        "mail" : "facupp@hotmail.com" ,
-        "imagen-perfil" : "imagen-perfil-1.jpg"
- 
-    }
-    ,
-    {
-
-        "id": 2,
-        "nombre" : "Ramiro",
-        "apellido" : "Ramirez" ,
-        "contrasena" : "123456" ,
-        "mail" : "Rami_Ramirez@hotmail.com" ,
-        "imagen-perfil" : "imagen-perfil-2.jpg"
- 
-    }
-    ,
-    {
-
-        "id": 3,
-        "nombre" : "Gonzalo",
-        "apellido" : "Gonzalez" ,
-        "contrasena" : "123456" ,
-        "mail" : "g0nza_gonzales@hotmail.com" ,
-        "imagen-perfil" : "imagen-perfil-2.jpg"
- 
-    }
+   {
+      "id": 1,
+      "firstname": "Dani",
+      "lastname": "Gonza",
+      "email": "dani@gmail.com",
+      "password": "$2a$12$jg/H3Jzt8.kRaHM7hBEhdOdLC2HhlsX04IOKKuen.2CDTmQaNljYy",
+      "username": "userDani",
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 2,
+      "firstname": "Karen",
+      "lastname": "Acosta",
+      "email": "karen@gmail.com",
+      "password": "$2a$12$2sPtJ8.gZTGBgM6itgeJqO5exokTarJKRVvxoh4d/8rWsDRB9sIwa",
+      "username": "userKaren",
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 3,
+      "firstname": "Ariel",
+      "lastname": "Lopez",
+      "email": "ariel@gmail.com",
+      "password": "$2a$12$zlOsZy2e2LedG883g75YTO7/q80QZR8FrfPv40DX9o9zy1hH3ZFhC",
+      "username": "userAriel",
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 4,
+      "firstname": "Riki",
+      "lastname": "Zarate",
+      "email": "riki@gmail.com",
+      "password": "$2a$12$28m1l.dzwnQLdTFbFhb0O../YLL5TYa51xTmOOZmHA1zqfbQE6wdO",
+      "username": "userRiki",
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 5,
+      "firstname": "Juan Manuel",
+      "lastname": "Waizer",
+      "username": "juanMa",
+      "email": "juanma@gmail.com",
+      "password": "$2a$12$5rkrksrm9L8c1PHsoEtUc.P2tpegF6BJ5131I97Lk2aVeNnJbr.p.",
+      "rol": "admin",
+      "avatar": "default-user.png"
+   }
 ]

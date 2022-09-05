@@ -5,16 +5,19 @@ const router = express.Router();
 
 const {index, create, store, detail, edit, update, destroy, cart, list} = require('../controllers/productController');
 
+const uploadProduct = require('../middlewares/upLoadFilesProduct');
+
+const adminUserCheck = require('../middlewares/adminUserCheck');
 
 router
     .get('/', index)
     .get('/list', list)
-    .get('/create', create)
-    .post('/store', store)
+    .get('/create', adminUserCheck, create)
+    .post('/store', uploadProduct.single('image'),store)
     .get('/detail/:id', detail)
 
-    .get('/edit/:id', edit)
-    .put('/update/:id', update)
+    .get('/edit/:id',adminUserCheck, edit)
+    .put('/update/:id',uploadProduct.single('image'), update)
 
     .delete('/delete/:id', destroy)
     .get('/cart', cart)

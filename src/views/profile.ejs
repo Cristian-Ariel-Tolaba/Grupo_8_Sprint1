@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('./partials/head',{ title: 'Home',stylesheets: 'profile.css'})
+<%- include('./partials/head',{ title: 'Perfil de usuario',stylesheets: 'profile.css'})
  %> 
 <body>
     <%- include('./partials/header') %> 
@@ -8,7 +8,7 @@
     <div class="mi_perfil" >
 
         <div class="mi_perfil_foto">
-            <img src="/images/blank-profile-picture-973460_640.png" alt="Insertar Imagen">
+            <img src="/images/<%= user.avatar ? user.avatar: 'default-user.png'%>" alt="Insertar Imagen">
         </div>
         <div>
             <h1 >Mi Perfil</h1>
@@ -18,27 +18,42 @@
             <form action="" class="form">
 
                 <div class="inputContainer">
-                   <label class="label">Nombre:</label></br>
-                    <input type="text" class="input" placeholder="a">
+                   <label class="label">Nombre</label></br>
+                    <input type="text" class="input" value="<%= user.firstname %>">
                     
                 </div>
 
                 <div class="inputContainer">
-                    <label class="label">Apellido:</label></br>
-                    <input type="text" class="input" placeholder="a">
+                    <label class="label">Apellido</label></br>
+                    <input type="text" class="input" value="<%= user.lastname%>">
                     
                 </div>
 
                 <div class="inputContainer">
-                    <label class="label">Mail:</label></br>
-                    <input type="text" class="input" placeholder="a">
+                    <label class="label">Nombre de usuario</label></br>
+                    <input type="text" class="input" value="<%= user.username %>">                   
+                </div>
+
+                <div class="inputContainer">
+                    <label class="label">Email</label></br>
+                    <input type="email" class="input" value="<%= user.email %>">
                     
                 </div>
 
                 <div class="inputContainer">
-                    <label class="label">Telefono:</label></br>
-                    <input type="tel" class="input" placeholder="12-3456-7890">
+                    <label class="label">Telefono</label></br>
+                    <input type="text" class="input">
                     
+                </div>
+
+                <div class="inputContainer">
+                    <label class="label">Domicilio</label></br>
+                    <input type="text" class="input">                   
+                </div>
+
+                <div class="inputContainer">
+                    <button type="submit">Guardar</button>     
+                    <button type="reset">Cancelar</button>             
                 </div>
 
             </form>

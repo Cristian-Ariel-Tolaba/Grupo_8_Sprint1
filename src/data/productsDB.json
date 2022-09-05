@@ -2,7 +2,7 @@
    {
       "id": 1,
       "name": "Agala",
-      "price": 2100,
+      "price": 3500,
       "discount": 0,
       "category": "destacados",
       "description": "Es un vino que expresa muy bien el objetivo que persiguen con estos vinos, ya que tiene una nariz fragante y floral, con gran expresión de frutos del bosque y notas algo balsámicas. Su boca es de cuerpo medio y refrescante, frutal en su recorrido y deja para el final unos toques minerales y ciertos recuerdos a hierbas aromáticas.",
@@ -11,8 +11,8 @@
    {
       "id": 2,
       "name": "Anima Negra",
-      "price": 900,
-      "discount": 0,
+      "price": 2900,
+      "discount": 5,
       "category": "in-sale",
       "description": "Se expresa a su manera, ya sin complejos, ligero y delicado en cuerpo y en color, muy frutal y floral en nariz, sorprendente elegante y complejo en boca, con muchos frutos rojos, más notas florales y amplios especiados.",
       "image": "anima-negra.jpeg"
@@ -29,8 +29,8 @@
    {
       "id": 4,
       "name": "Castillo",
-      "price": 2000,
-      "discount": 0,
+      "price": 4320,
+      "discount": 15,
       "category": "in-sale",
       "description": "Un vino con carácter de territorio, lleno de frutas rojas maduras, profundidad de tierra y un toque de violetas. El paladar no es masivo pero está ligado con firmeza por su carácter ígneo y una calidad remarcable.",
       "image": "castillo.jpeg"
@@ -47,8 +47,8 @@
    {
       "id": 6,
       "name": "Lava",
-      "price": 1300,
-      "discount": 0,
+      "price": 7310,
+      "discount": 10,
       "category": "in-sale",
       "description": "Es un vino que expresa muy bien el objetivo que persiguen con estos vinos, ya que tiene una nariz fragante y floral, con gran expresión de frutos del bosque y notas algo balsámicas. Su boca es de cuerpo medio y refrescante, frutal en su recorrido y deja para el final unos toques minerales y ciertos recuerdos a hierbas aromáticas.",
       "image": "lava.jpeg"
@@ -56,7 +56,7 @@
    {
       "id": 7,
       "name": "Loba",
-      "price": 800,
+      "price": 4800,
       "discount": 0,
       "category": "destacados",
       "description": "Un vino con carácter de territorio, lleno de frutas rojas maduras, profundidad de tierra y un toque de violetas. El paladar no es masivo pero está ligado con firmeza por su carácter ígneo y una calidad remarcable.",
@@ -65,8 +65,8 @@
    {
       "id": 8,
       "name": "Terrerazo",
-      "price": 2100,
-      "discount": 0,
+      "price": 4100,
+      "discount": 20,
       "category": "in-sale",
       "description": "Es un vino que expresa muy bien el objetivo que persiguen con estos vinos, ya que tiene una nariz fragante y floral, con gran expresión de frutos del bosque y notas algo balsámicas. Su boca es de cuerpo medio y refrescante, frutal en su recorrido y deja para el final unos toques minerales y ciertos recuerdos a hierbas aromáticas.",
       "image": "terrerazo.jpeg"

@@ -74,6 +74,7 @@ module.exports = {
                     price : +price,
                     discount : +discount,
                     description: description,
+                    image: req.file ? req.file.filename : 'default-image.png',
                     category
                 }
             }return product
