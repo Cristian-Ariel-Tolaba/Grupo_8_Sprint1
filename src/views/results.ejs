@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head',{ title: 'Resultado de tu busqueda',stylesheets: 'home.css'})
+ %> 
+<body>
+    <%- include('./partials/header') %> 
+   <main>
+        <div id="welcome-img">
+            <img src="/images/banner-inicio.png" alt="">
+        </div>
+        <h1>Nuestros productos</h1>
+        <div class="main-products">
+            <h2 >Resultados de tu búsqueda</h2>
+
+            <% if (products.length > 0) { %>
+                <% products.forEach(({id, name, image, price, discount,description}) => { %>
+
+                <div class="main-products">
+                    <img src="/images/<%= image %> " alt="">
+                    <h2><%= name %>  </h2>
+                    <p>$<%=toThousand(price) %></p>
+                    <p>"<%= description %>"</p>
+                    <form action="">
+                    <button><a href="/products/detail/<%= id %>">Ver mas</a></button>
+                    </form>
+                </div>
+
+            <% }) %>
+            <% } else{%>
+                <div>
+                    <h2>No hay productos que coincidan con esa búsqueda</h2>
+                </div>
+            <% } %>
+
+        </div>
+    </main>
+    
+    <%- include('./partials/footer') %> 
+ 
+ </body>
+ </html>
