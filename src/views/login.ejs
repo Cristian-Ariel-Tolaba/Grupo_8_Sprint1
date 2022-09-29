@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vino y Se Fue | Login</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/login.css">
-</head>
-
+<%- include('./partials/head')%> 
 <body class="body-log">
 
-    <figure class="logo-im">
-        <a href="/"><img src="/images/imagen-logo.png" alt="logo" class="logo-img"></a>
-    </figure>
+    <%- include('./partials/header') %> 
+    <%- include('./partials/baner') %> 
+
+   
     <h1 class="body-log-h1">Iniciar sesión</h1>
 
     <div >
@@ -43,6 +34,7 @@
             </div>
         </form>
     </div>
+    <%- include('./partials/footer') %>
 </body>
 
 </html>

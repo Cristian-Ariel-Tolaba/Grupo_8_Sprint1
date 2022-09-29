@@ -23,7 +23,7 @@ module.exports = {
         const products = loadProducts();
         const product = products.find(product => product.id === +req.params.id);
         return res.render('productDetail', {
-            title: 'Detalle',
+            title: 'Detalle del producto',
             product,
             toThousand
         });
@@ -58,6 +58,7 @@ module.exports = {
         const products = loadProducts();
         const product = products.find(product => product.id === +req.params.id);
         return res.render('productEditForm',{
+            title: 'Edicion de producto',
             product
         })
     },
@@ -95,6 +96,8 @@ module.exports = {
     },
 
     cart: (req, res) => {
-        return res.render('productCart')
+        return res.render('productCart',{
+            title : 'Mi carrito'
+        })
     }
 };

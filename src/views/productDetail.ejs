@@ -1,77 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>Detalle del Producto</title>
-    <link rel="stylesheet" href="/stylesheets/productDetail.css">
-    <link rel="stylesheet" href="/stylesheets/reutilizables.css">
-    <script src="https://kit.fontawesome.com/0c10d8352a.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,500&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Roboto:ital,wght@0,300;0,500;1,500&display=swap"
-        rel="stylesheet">
-</head>
+    <%- include('./partials/head',{stylesheets: 'productDetail.css'}) 
+ %> 
 
 <body>
-
-    <header>
-
-
-        <div class="header_principal">
-
-            <div class="header_principal_logo">
-               <a href="/"><img src="/images/logo.png" alt="sin imagen"></a>
-            </div>
-
-            <div class="header_principal_buscador">
-                <form action="/search" method="get">
-                    <input type="text" name="keywords" placeholder="Buscar..." />
-                    <button type="submit"><span class="icon"><i class="fa fa-search"></i></span></button>
-                </form>
-            </div>
-
-            <div class="header_principal_iconos">
-
-                <div class="header_principal_burger_menu">
-                    <button>
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-
-                <div class="header_principal_sesion_carrito">
-
-                    <ul type="none">
-                        <div class="iconos">
-                            <div>
-                                <button>
-                                    <i class="fa-solid fa-user"></i>
-                                    <li><a href="/users/login">Iniciar sesion</a></li>
-                                </button>
-                            </div>
-                            <div>
-                                <button>
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                    <li><a href="/products/cart">Mi Carrito</a></li>
-                                </button>
-                            </div>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-
-
-    </header>
-
-
-
+    <%- include('./partials/header') %> 
+  
     <main>
+        <%- include('./partials/baner') %> 
         <div class="aviso">
             <img src="/images/Banner-inicio.png" alt="">
         </div>
@@ -144,88 +80,7 @@
 
     </main>
 
-
-
-    <footer>
-        <div class="footer_principal">
-            <div>
-                <nav>
-                    <ul type="none" class="horarios">
-                        <li>
-                            <h6>Horarios de Atención</h6>
-                        </li>
-                        <li>
-                            <p>Lunes a Viernes:</p>
-                        </li>
-                        <li>
-                            <p>09:00 a 13:00</p>
-                        </li>
-                        <li>
-                            <p>16:00 a 20:00</p>
-                        </li>
-                        <li>
-                            <p>Sabados:</p>
-                        </li>
-                        <li>
-                            <p>09:00 a 13:00</p>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div>
-                <nav>
-                    <ul type="none" class="contactos">
-                        <li>
-                            <h6> Contactos</h6>
-                        </li>
-                        <li>
-                            <p> Telefono : 1234-5678</p>
-                        </li>
-                        <li>
-                            <p> Whatsapp: +5491112345678</p>
-                        </li>
-                        <li>
-                            <p> Correo: VinoYSeFue@grupo8gmail.com</p>
-                        </li>
-                        <li>
-                            <p><i class="fa-solid fa-map-location-dot"></i> Av. Falsa 0123</p>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div>
-                <nav>
-                    <ul type="none" class="redes">
-                        <li>
-                            <h6>Siguenos</h6>
-                        </li>
-                        <li>
-                            <p> <i class="fa-brands fa-twitter"></i> @VinoYSeFue</p>
-                        </li>
-                        <li>
-                            <p> <i class="fa-brands fa-instagram"></i> @VinoYSeFue</p>
-                        </li>
-                        <li>
-                            <p> <i class="fa-brands fa-facebook"></i> VinoYSeFue</p>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="advertencia">
-            <p>BEBER CON MODERACION. PROHIBIDA SU VENTA A MENORES DE 18 AÑOS</p>
-        </div>
-        <div class="derechos_de_autor">
-            <div class="derecho_1">
-                <p> Powered by Grupo 8</p>
-            </div>
-            <div class="derecho_2">
-                <p>© 2022 Vino y Se Fue. Todos los derechos reservados</p>
-            </div>
-        </div>
-
-    </footer>
-
+    <%- include('./partials/footer') %> 
 </body>
 
 </html>

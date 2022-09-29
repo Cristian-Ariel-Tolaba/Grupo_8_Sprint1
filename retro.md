@@ -1,3 +1,18 @@
+### Retro Sprint 4
+
+1. Comenzar a hacer: Comunicar con anticipacion si se tiene algun inconveniente en la realizacion de las tareas asignadas.
+	
+2. Hacer más: redoblar los esfuerzos para continuar y terminar con éxito el proyecto.
+
+3. Continuar haciendo: seguir trabajando con mayor responsabilidad y compromiso.
+
+4. Hacer menos.
+
+5. Dejar de hacer: romper con la falta de comunicacion, participacion y responsabilidad en las asignaciones.
+
+
+
+
 # Retro Sprint 3
 
 Compartimos la Retrospectiva del Sprint 3
