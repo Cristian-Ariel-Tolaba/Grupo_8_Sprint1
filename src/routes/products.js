@@ -8,6 +8,7 @@ const {index, create, store, detail, edit, update, destroy, cart, list} = requir
 const uploadProduct = require('../middlewares/upLoadFilesProduct');
 
 const adminUserCheck = require('../middlewares/adminUserCheck');
+const userUserCheck = require('../middlewares/userUserCheck');
 
 router
     .get('/', index)
@@ -19,7 +20,7 @@ router
     .get('/edit/:id',adminUserCheck, edit)
     .put('/update/:id',uploadProduct.single('image'), update)
 
-    .delete('/delete/:id', destroy)
-    .get('/cart', cart)
+    .delete('/delete/:id', adminUserCheck, destroy)
+    .get('/cart', userUserCheck, cart)
 
 module.exports = router;

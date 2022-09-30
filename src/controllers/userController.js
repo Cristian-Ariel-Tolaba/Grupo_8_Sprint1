@@ -6,7 +6,7 @@ const bcryptjs = require('bcryptjs');
 module.exports = {
     login : (req, res) => {
         return res.render('login', {
-            title : 'Login',
+            title: 'Login',
             stylesheets: 'login.css'
         })
     },
@@ -41,10 +41,7 @@ module.exports = {
     },
 
     register : (req, res) => {
-        return res.render('register', {
-            title : 'Register',
-            stylesheets: 'register.css'
-        })
+        return res.render('register')
     },
 
     processRegister : (req,res) => {
@@ -92,6 +89,7 @@ module.exports = {
 
         let user = loadUsers().find(user => user.id === req.session.userLogin.id)
         return res.render('profile',{
+            title : 'Mi perfil',
             user
         })
     },
