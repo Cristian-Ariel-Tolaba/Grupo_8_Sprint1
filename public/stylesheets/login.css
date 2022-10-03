@@ -1,10 +1,69 @@
+/*HEADER*/
+
+header {
+    
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/Banner.webp");
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#header img {
+    width: 110px;
+}
+
+#header input {
+    width: 120px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+#header button {
+    border: 1px solid black;
+    border-radius: 10px;
+    font-family: "roboto";
+    font-weight: bold;
+    padding: 3px;
+}
+
+
+
+.header-nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding:0px;
+    margin-bottom: 0px;
+}
+
+.header-nav a {
+    color: azure;
+    font-family: "open sans";
+    text-decoration: none;
+}
+
+#welcome-img img {
+    width: 100%;
+    margin-top: 5px;
+    
+}
+
+.main_body{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
 .body-log {
     background-image: linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)) 
     ,url("/images/Banner.webp");
     margin: 0;
     color: #ccc;
     text-align: center;
-    padding-bottom: 50px;
+    
+    height: 1000px;
    
 }
 .logo-im{
@@ -137,5 +196,42 @@
     color: white;
    
 }
+
+
+/*footer*/
+footer {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/VinoYSeFue.jpg");
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#footer img {
+    margin-left: 16px;
+}
+
+#footer ul {
+    display: flex;
+    justify-content: center;
+    margin-right: 40px;
+    margin-bottom: 30px;
+}
+
+#footer a {
+    text-decoration: none;
+    color: azure;
+    font-family: "roboto";
+}
+
+footer p {
+    font-family: "roboto";
+    font-size: 8px;
+    margin-bottom: 10px;
+    color: azure;
+}
+
 
 
