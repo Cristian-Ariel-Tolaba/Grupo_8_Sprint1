@@ -4,6 +4,7 @@ body {
     width: 100%;
     height: 686px;
     margin: 0px;
+    background-color: rgb(143, 121, 55);
 }
 
 header {
@@ -16,100 +17,68 @@ main {
 
 footer {
     width: 100%;
-    height: 286px;
-    background-color: #471619
 }
 
 /*HEADER*/
 
-.header_principal {
-    background-color: #2b2b2b;
-    height: 80px;
+header {
+    
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/Banner.webp");
+}
+
+#header {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-around;
 }
 
-.header_principal_logo img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+#header img {
+    width: 110px;
 }
 
-.header_principal_buscador input {
+#header input {
     width: 120px;
     height: 20px;
-    outline: none;
-    border: 1px black solid;
-    border-radius: 3px;
-    margin: 5px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 3px;
 }
 
-.header_principal_buscador button {
-    padding: 1px;
-    margin-left: -24px;
-    background: white;
-    border: none;
+#header button {
+    border: 1px solid black;
+    border-radius: 10px;
+    font-family: "roboto";
+    font-weight: bold;
+    padding: 3px;
 }
 
-.header_principal_menu {
-    display: none;
-}
 
-.header_principal_burger_menu {
-    margin-top: 16px;
-}
 
-.header_principal_sesion_carrito ul {
-    padding: 0px;
-}
-
-.header_principal_iconos {
+.header-nav ul {
     display: flex;
-    flex-direction: row;
-
+    justify-content: space-around;
+    padding:0px;
+    margin-bottom: 0px;
 }
 
-.header_principal_iconos button {
-    color: white;
-    width: 35px;
-    height: 35px;
-    margin: 1px;
-    background-color: #2b2b2b;
-    border: none;
-    padding: 2px;
+.header-nav a {
+    color: azure;
+    font-family: "open sans";
+    text-decoration: none;
 }
 
-.iconos {
-    display: flex;
-    flex-direction: row;
-}
-
-.iconos i {
-    color: white;
-    font-size: 12px;
-    margin-bottom: 3px;
-}
-
-.iconos li {
-    font-family: 'Roboto', sans-serif;
-    color: white;
-    font-size: 8px;
-    text-align: center;
-}
-
-/*AVISO*/
-
-.aviso {
+#welcome-img img {
     width: 100%;
-    height: 100px;
+    margin-top: 5px;
+    
 }
 
-.aviso img {
-    width: 320px;
-    height: 100px;
+h1 {
+    color: azure;
+    text-align: center;
+    font-family: "open sans";
 }
+
 
 /*MAIN*/
 
@@ -264,7 +233,7 @@ footer {
 
 /*FOOTER*/
 
-.footer_principal {
+/*.footer_principal {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -318,7 +287,42 @@ footer {
 
 .derecho_2 {
     margin-right: 4px;
+}*/
+
+footer {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/VinoYSeFue.jpg");
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
+
+#footer img {
+    margin-left: 16px;
+}
+
+#footer ul {
+    display: flex;
+    justify-content: center;
+    margin-right: 40px;
+    margin-bottom: 30px;
+}
+
+#footer a {
+    text-decoration: none;
+    color: azure;
+    font-family: "roboto";
+}
+
+footer p {
+    font-family: "roboto";
+    font-size: 8px;
+    margin-bottom: 10px;
+    color: azure;
+}
+
 
 @media (min-width: 768px) {
     header {
@@ -332,7 +336,7 @@ footer {
     }
 
     main {
-        height: 928px;
+        height: 1100px;
         background-image: url("/images/Banner.webp");
         background-size: 768px;
     }
@@ -357,18 +361,13 @@ footer {
         width: 450px;
     }
 
-    /*aviso*/
-
-    .aviso {
-    
-        height: 167px;
-        margin: 0px;
-    }
-
-    .aviso img {
+    #welcome-img img {
         width: 100%;
-        height: 167px;
+        margin-top: 58px;
+        
     }
+
+    
 
     /*MAIN*/
 
@@ -389,9 +388,7 @@ footer {
 
 @media (min-width: 1024px) {
     header {
-
         height: 130px;
-        background-color: #2b2b2b
     }
 
     body {
@@ -399,7 +396,7 @@ footer {
     }
 
     main {
-        height: 1100px;
+        height: 1300px;
         background-image: url("/images/Banner.webp");
         background-size: 1024px;
     }
@@ -408,75 +405,12 @@ footer {
 
     /*HEADER*/
 
-    .header_principal {
-        height: 100px;
+    #header input {
+        width: 500px;
     }
 
-    .header_principal_logo {
-        height: 100px;
-    }
-
-    .header_principal_logo img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .header_principal_buscador input {
-        width: 558px;
-        height: 23px;
-    }
-
-    .header_principal_burger_menu {
-        display: none;
-    }
-
-    .header_principal_iconos {
-        justify-content: space-around;
-    }
-
-    .header_principal_iconos button {
-        margin-right: 35px;
-        margin-left: 15px;
-    }
-
-    .iconos i {
-        font-size: 25px;
-    }
-
-    .header_principal_menu {
-        display: block;
-    }
-
-    .header_principal_menu ul {
-        margin: 0px;
-        padding: 4px 0px 0px 0px;
-    }
-
-    .menu {
-        height: 20px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .menu li a {
-        color: white;
-        padding: 0px 50px 0px 0px;
-    }
-
-    /*aviso*/
-
-    .aviso {
-       
-        height: 230px;
-        margin: 0px;
-    }
-
-    .aviso img {
-
-        width: 100%;
-        height: 230px;
-    }
+   
+    
 
     /*main*/
 
@@ -589,28 +523,5 @@ footer {
         height: 30px;
     }
 
-    .footer_principal {
-        height: 220px;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .footer_principal li h6 {
-        font-size: 20px;
-        margin: 0px 0px 10px 0px
-    }
-
-    .footer_principal li p {
-        font-size: 18px;
-    }
-
-    .advertencia p {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        font-size: 18px;
-    }
-
-    .derechos_de_autor p {
-        font-size: 12px;
-    }
+   
 }
