@@ -17,7 +17,7 @@ router
   .post('/register', uploadUser.single('avatar'), registerValidator, processRegister) 
   .get('/passwordReset', passwordReset)
   .get('/profile', userSessionCheck, profile)  
-  .post('/profile', updateProfile)
+  .put('/profile',uploadUser.single('avatar'), updateProfile)
   .get('/logout', logout)
 
 

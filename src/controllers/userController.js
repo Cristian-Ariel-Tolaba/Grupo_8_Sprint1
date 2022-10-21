@@ -10,54 +10,31 @@ const bcryptjs = require('bcryptjs');
 module.exports = {
     login : (req, res) => {
 
-        db.User.findAll()
-            .then(()=>{
-                return res.render('login',{
-                    title: 'Login', 
-                    stylesheets: 'login.css'
-                })
-            })
-            .catch(error=> console.log(error))
+        return res.render('login',{
+            title: 'Login', 
+            stylesheets: 'login.css'
+        })
+      
     },
 
     //consultar
     processLogin : (req,res) => {
 
-        /* let errors = validationResult(req);
+        let errors = validationResult(req);
         if(errors.isEmpty()){
-        let {id, firstname, username, rolId, avatar} = loadUsers().find(user => user.email === req.body.email);
-
-        req.session.userLogin = {
-            id,
-            firstname,
-            username,
-            rolId,
-            avatar           
-        };
-
-        if(req.body.recordame){
-            res.cookie('vinoysefue16', req.session.userLogin,{
-                maxAge: 1000 * 60
+            db.User.findOne({
+                where : {
+                    email : req.body.email.trim()
+                }
             })
-        }
-
-            return res.redirect('/') //users/profile
-        }else {
-            return res.render('login',{
-                errors: errors.mapped()
-               
-            })
-        } */
-
-        let { firstname, rolId, avatar} =
-            db.User.findByPk(req.params.id)
                 .then((user) => {
                     console.log(user)
 
-                    req.session.userLogin = {                       
-                        firstname,                       
-                        rolId,
-                        avatar           
+                    req.session.userLogin = {
+                        id : user.id,                       
+                        firstname : user.firstname,                       
+                        rolId : user.rolId,
+                        avatar : user.avatar     
                     };
             
                     if(req.body.recordame){
@@ -69,45 +46,48 @@ module.exports = {
                     res.redirect('/')
                 })
                 .catch(error => console.log(error))
+        }else {
+            return res.render('login',{
+                errors: errors.mapped(),
+                title: 'Login', 
+            stylesheets: 'login.css'
+            })
+        }
+
+      
         
     },
 
     register : (req, res) => {
 
-            db.Rol.findAll({
-                attributes: ['id','name'],
-                order: ['name']
-            })
-                .then(roles=>{
-                    return res.render('register',{
-                        roles
-                    })
-                })
-                .catch(error=>console.log(error))
+        return res.render('register')
+
     },
   
     //consultar
     processRegister : (req,res) => {
 
-     /*    let errors = validationResult(req);
+         let errors = validationResult(req);
         if(errors.isEmpty()){
-            const {firstname, lastname, email, password} = req.body;
-            const users = loadUsers();
-            const newUser = {
-                id: (users[users.length -1].id) + 1,
-                firstname: firstname.trim(),
-                lastname: lastname.trim(),
-                email: email.trim(),
-                password: bcryptjs.hashSync(password,12),
-                rolId : rol.id,
-                avatar: req.file ? req.file.filename : 'default-user.png'
-                        
-            }
-    
-            const usersModify = [...users, newUser];
-    
-            storeUsers(usersModify);
-            return res.redirect('/users/login');
+          
+             const {firstname, lastname, email, password} = req.body;
+
+            db.User.create({
+
+                    rolId : 2,
+                    firstname: firstname.trim(),           
+                    lastname: lastname.trim(),  
+                    email: email.trim(),
+                    password: bcryptjs.hashSync(password,12),
+                    avatar: req.file ? req.file.filename : 'default-user.png'
+                    
+                })
+                .then(user => {
+                    console.log(user)
+                    return res.redirect('/users/login')
+                })
+                
+            .catch(error=>console.log(error))
 
         }else{
             return res.render('register', {
@@ -115,26 +95,9 @@ module.exports = {
                 old: req.body
             })
         }
-       */
+    
        
-        const {firstname, lastname, rolId,email, password} = req.body;
-
-        db.User.create({
-
-                rolId,
-                firstname: firstname.trim(),           
-                lastname: lastname.trim(),  
-                email: email.trim(),
-                password: bcryptjs.hashSync(password,12),
-                avatar: req.file ? req.file.filename : 'default-user.png'
-                
-            })
-            .then(user => {
-                console.log(user)
-                return res.redirect('/users/login')
-            })
-                
-            .catch(error=>console.log(error))
+       
            
     },
 
@@ -151,26 +114,14 @@ module.exports = {
     },
 
     profile : (req, res) => {
-
-       /*  let user = loadUsers().find(user => user.id === req.session.userLogin.id)
-        return res.render('profile',{
-            title : 'Mi perfil',
-            user
-        }) */
         
-            let roles = db.Rol.findAll({
-                attributes: ['id', 'name'],
-                order: ['name']
-            });
-
-            let user = db.User.findByPk(req.params.id,{
+           db.User.findByPk(req.session.userLogin.id,{
                 include: [{association: 'rol'}]
-            });
-    
-            Promise.all([roles, user])
-                .then(([roles, user])=>{
+            })
+                .then(user=>{
                     return res.render('profile',{
-                        title : 'Mi perfil', roles, user
+                        title : 'Mi perfil', 
+                        user
                     })
                 })
                 .catch(error => console.log(error));
@@ -178,23 +129,29 @@ module.exports = {
     },
 
     updateProfile : (req, res) => {
-        const {firstname, lastname, rolId,email, password} = req.body;
+        const {firstname, lastname} = req.body;
         db.User.update(
 
             {
-                rolId,
                 firstname: firstname.trim(),           
                 lastname: lastname.trim(),  
-                email: email.trim(),
-                password: bcryptjs.hashSync(password,12),
-                avatar: req.file ? req.file.filename : 'default-user.png'
+                avatar: req.file ? req.file.filename : req.session.userLogin.avatar
 
             },
             {
-                where: {id: req.params.id}
+                where: {id: req.session.userLogin.id}
             }
         )
-        .then(()=> res.redirect('/'))
+
+        .then(()=> {
+
+            req.session.userLogin.firstname = firstname;
+            if(req.file){
+                req.session.userLogin.avatar = req.file.filename
+            }
+            res.locals.userLogin = req.session.userLogin
+            res.redirect('/')
+        } )
         .catch(error => console.log(error))
     },
 
