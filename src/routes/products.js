@@ -14,11 +14,11 @@ router
     .get('/', index)
     .get('/list', list)
     .get('/create', adminUserCheck, create)
-    .post('/store', uploadProduct.single('image'),store)
+    .post('/store', uploadProduct.array('image'),store)
     .get('/detail/:id', detail)
 
     .get('/edit/:id',adminUserCheck, edit)
-    .put('/update/:id',uploadProduct.single('image'), update)
+    .put('/update/:id',uploadProduct.array('image'), update)
 
     .delete('/delete/:id', adminUserCheck, destroy)
     .get('/cart', userUserCheck, cart)

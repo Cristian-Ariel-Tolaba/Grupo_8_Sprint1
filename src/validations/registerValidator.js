@@ -9,9 +9,6 @@ module.exports = [
     check('lastname')
         .notEmpty().withMessage('Debes completar el apellido').bail()
         .isLength({min: 3}).withMessage('El apellido debe tener al menos 3 caracteres'),
-    check('username')
-        .notEmpty().withMessage('Debes completar el nombre  de usuario').bail()
-        .isLength({min: 5}).withMessage('El nombre de usuario debe tener al menos 5 caracteres'),
     body('email')
         .notEmpty().withMessage('Debes completar el email').bail()
         .isEmail().withMessage('Debes ingresar un email válido').bail()

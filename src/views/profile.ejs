@@ -10,7 +10,8 @@
     <div class="mi_perfil" >
 
         <div class="mi_perfil_foto">
-            <img src="/images/<%= user.avatar ? user.avatar: 'default-user.png'%>" alt="Insertar Imagen">
+            
+            <img src="/images/default-user.png" alt="Insertar Imagen">
         </div>
         <div>
             <h1 >Mi Perfil</h1>
@@ -32,8 +33,14 @@
                 </div>
 
                 <div class="inputContainer">
-                    <label class="label">Nombre de usuario</label></br>
-                    <input type="text" class="input" value="<%= user.username %>">                   
+                    <label class="label"for="rol"></label></br>
+                    
+                    <select name="rol" id="rol">
+                        <option value=""hidden selected>Rol</option>
+                           <% roles.forEach(({id, name}) => { %>
+                            <option value="<%=id%>"<%= id === user.rolId && 'selected' %>><%=name%></option>
+                           <% }) %>
+                    </select>                
                 </div>
 
                 <div class="inputContainer">
@@ -49,7 +56,7 @@
                 </div>
 
                 <div class="inputContainer">
-                    <label class="label">Domicilio</label></br>
+                    <label class="label">Direccion</label></br>
                     <input type="text" class="input">                   
                 </div>
 

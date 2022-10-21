@@ -37,13 +37,13 @@
                     </div>
 
                     <div class="inputContainer">
-                        <label class="label" for="username">Nombre de usuario</label>
-                        <input type="text" class="input" id="username" name="username"
-                            value="<%= locals.old && old.username ? old.username : null %> ">
-                        
-                        <p>
-                            <%= locals.errors && errors.username ? errors.username.msg : null %>
-                        </p>
+                        <label class="label" for="rol"></label>
+                        <select name="rol" id="rol">
+                            <option value=""hidden selected>Rol</option>
+                            <% roles.forEach(({id,name}) => { %>
+                                <option value="<%= id %>"><%= name %></option>
+                            <% }) %>
+                        </select>
         
                     </div>
         

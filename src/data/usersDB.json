@@ -1,13 +1,12 @@
 [
    {
       "id": 1,
-      "firstname": "Dani",
-      "lastname": "Gonza",
-      "email": "dani@gmail.com",
+      "firstname": "Pablo",
+      "lastname": "Roman",
+      "email": "pablo@gmail.com",
       "password": "$2a$12$jg/H3Jzt8.kRaHM7hBEhdOdLC2HhlsX04IOKKuen.2CDTmQaNljYy",
-      "username": "userDani",
-      "rol": "user",
-      "avatar": null
+      "rolId": 1,
+      "avatar": "default-user.png"
    },
    {
       "id": 2,
@@ -15,9 +14,8 @@
       "lastname": "Acosta",
       "email": "karen@gmail.com",
       "password": "$2a$12$2sPtJ8.gZTGBgM6itgeJqO5exokTarJKRVvxoh4d/8rWsDRB9sIwa",
-      "username": "userKaren",
-      "rol": "user",
-      "avatar": null
+      "rolId": 2,
+      "avatar": "default-user.png"
    },
    {
       "id": 3,
@@ -25,9 +23,8 @@
       "lastname": "Lopez",
       "email": "ariel@gmail.com",
       "password": "$2a$12$zlOsZy2e2LedG883g75YTO7/q80QZR8FrfPv40DX9o9zy1hH3ZFhC",
-      "username": "userAriel",
-      "rol": "user",
-      "avatar": null
+      "rolId": 2,
+      "avatar": "default-user.png"
    },
    {
       "id": 4,
@@ -35,18 +32,43 @@
       "lastname": "Zarate",
       "email": "riki@gmail.com",
       "password": "$2a$12$28m1l.dzwnQLdTFbFhb0O../YLL5TYa51xTmOOZmHA1zqfbQE6wdO",
-      "username": "userRiki",
-      "rol": "user",
-      "avatar": null
+      "rolId": 2,
+      "avatar": "default-user.png"
    },
    {
       "id": 5,
       "firstname": "Juan Manuel",
       "lastname": "Waizer",
-      "username": "juanMa",
       "email": "juanma@gmail.com",
       "password": "$2a$12$5rkrksrm9L8c1PHsoEtUc.P2tpegF6BJ5131I97Lk2aVeNnJbr.p.",
-      "rol": "admin",
+      "rolId": 1,
+      "avatar": "default-user.png"
+   },
+   {
+      "id": 6,
+      "firstname": "Elisa",
+      "lastname": "Gonzalez",
+      "email": "elikaren@gmail.com",
+      "password": "$2a$12$ZIIUGHq/6gE9H.QBM9Vi5ey7Mg/EdW1uuRQrz4oQ1RFvSxZm0D1ba",
+      "rolId": 2,
+      "avatar": "default-user.png"
+   },
+   {
+      "id": 7,
+      "firstname": "Mili",
+      "lastname": "Mendez",
+      "email": "mili@gmail.com",
+      "password": "$2a$12$1htNwiarpEyKuOuT4EhtourNDErFeVRNO8qaZQpFSFyqgwoP0B0M.",
+      "rolId": 2,
+      "avatar": "default-user.png"
+   },
+   {
+      "id": 8,
+      "firstname": "Daniel",
+      "lastname": "Perez",
+      "email": "danielito@gmail.com",
+      "password": "$2a$12$IcaohZyMXxgvIR6ljNnSwOfU7If5QbTk3AgodpZBL8ffMZuT2fpMO",
+      "rolId": 1,
       "avatar": "default-user.png"
    }
 ]

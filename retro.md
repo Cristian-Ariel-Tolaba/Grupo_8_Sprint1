@@ -1,3 +1,8 @@
+### Retro Sprint 5
+
+	Durante este sprint nos esforzamos para cumplir con el desarrollo de las asignaciones y con la entrega, solo unos detalles minimos quedaron pendientes. Seguiremos trabajando para lograr la culminacion exitosa del proyecto.
+	
+
 ### Retro Sprint 4
 
 1. Comenzar a hacer: Comunicar con anticipacion si se tiene algun inconveniente en la realizacion de las tareas asignadas.
