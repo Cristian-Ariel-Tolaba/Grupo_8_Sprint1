@@ -4,16 +4,12 @@
 
 body {
     margin: 0px;
+    background-image: url("/images/Banner.webp");
+    background-size: cover;
+    background-position: center;
 }
 
 /*main*/
-
-main {
-    height: 550px;
-    background-image: url("/images/Banner.webp");
-    background-size: 600px;
-    background-position: center;
-}
 
 .mi_perfil {
     height: 100%;

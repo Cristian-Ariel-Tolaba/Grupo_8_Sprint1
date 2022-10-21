@@ -107,7 +107,6 @@ h1 {
 
 
       .input {
-        position: absolute;
         top: 0px;
         left: 0px;
         height: 100%;
@@ -119,12 +118,13 @@ h1 {
         outline: none;
         background: none;
         z-index: 1;
+        color: gray;
     }
 
   /* Hide the placeholder texts (a) */
 
 ::placeholder {
-    color: transparent;
+    color: silver;
   }
 
   
@@ -216,6 +216,10 @@ h1 {
     font-weight: 600;
   }
 
+  .form__error__msg {
+    color: red;
+
+  }
 
 
 

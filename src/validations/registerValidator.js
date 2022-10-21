@@ -1,5 +1,6 @@
 const {check, body} = require('express-validator');
 const users = require('../data/usersModule').loadUsers();
+const db = require('../database/models');
 
 
 module.exports = [
@@ -13,13 +14,16 @@ module.exports = [
         .notEmpty().withMessage('Debes completar el email').bail()
         .isEmail().withMessage('Debes ingresar un email válido').bail()
         .custom((value, {req})=> {
-            let user = users.find(user => user.email === value.trim());
-            if(user){
-                return false
-            }else{
-                return true
-            }
-        }).withMessage('El email ya se encuentra registrado'),
+           return db.User.findOne({
+                where : {
+                    email : value.trim()
+                }
+            }).then(user => {
+                if(user){
+                    return Promise.reject()
+                }
+            }).catch( () => Promise.reject('El email ya se encuentra registrado'))
+        }),
     check('password')
         .notEmpty().withMessage('Debes ingresar una contraseña').bail()
         .isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres'),
