@@ -72,13 +72,12 @@
       "avatar": "default-user.png"
    },
    {
-      "id": 6,
+      "id": 9,
       "firstname": "Julieta",
       "lastname": "Velenzuela",
-      "username": "Julieta.V",
       "email": "probando@hotmail.com",
       "password": "$2a$12$3z/rkluyFFkuYgJIu/RmS.DVQWITdg6HJKaswvoLr4DuytoUqqB3O",
-      "rol": "user",
+      "rolId": 2,
       "avatar": "default-user.png"
    }
 ]

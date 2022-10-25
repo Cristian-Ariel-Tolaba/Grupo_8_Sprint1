@@ -18,15 +18,16 @@ module.exports = {
       province: {
         type: Sequelize.STRING
       },
-      userId: {
-        type: Sequelize.INTEGER, references : {
+     /* userId: {
+        type: Sequelize.INTEGER,
+        references : {
           model: {
             tableName: 'Users'
           },
           key: 'id'
         },
         onDelete: 'cascade'        
-      },
+      },*/
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
