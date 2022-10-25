@@ -105,20 +105,20 @@ h1 {
 /* */
 
 
-.input {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  width: 100%;
-  border: 1px solid #DADCE0;
-  border-radius: 7px;
-  font-size: 16px;
-  padding: 0 20px;
-  outline: none;
-  background: none;
-  z-index: 1;
-}
+      .input {
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        border: 1px solid #DADCE0;
+        border-radius: 7px;
+        font-size: 16px;
+        padding: 0 20px;
+        outline: none;
+        background: none;
+        z-index: 1;
+        color: gray;
+    }
 
 .error {
   background-color: red;
@@ -133,10 +133,8 @@ h1 {
 /* Hide the placeholder texts (a) */
 
 ::placeholder {
-  color: transparent;
-}
-
-
+    color: silver;
+  }
 
 
 /* Styling text labels */
@@ -202,6 +200,10 @@ h1 {
     
     subir el label al borde superior del input */
 
+  .form__error__msg {
+    color: red;
+
+  }
 
 
 .input:focus+.label {

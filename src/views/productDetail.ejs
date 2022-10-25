@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('./partials/head',{stylesheets: 'productDetail.css'}) 
- %> 
+    <%- include('./partials/head',{stylesheets: 'productDetail.css'})%> 
 
 <body>
     <%- include('./partials/header') %> 
   
     <main>
-        <%- include('./partials/baner') %> 
+        <%- include('./partials/baner')%> 
         
         <div class="main_principal">
             
             <div class="contenedor_izquierdo">
                 <div class="contenedor_izquierdo_foto">
-                    <img class="obj-fit-cover" src="/images/<%= product.image %>" alt="SinImagen">
+                    <img class="obj-fit-cover" src="/images/<%= product.images[0].file%>" alt="SinImagen">
                 </div>
                 <div class="contenedor_izquierdo_fotos_2">
                     <div class="foto_1">

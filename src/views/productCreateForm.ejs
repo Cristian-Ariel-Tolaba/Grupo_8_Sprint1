@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('./partials/head',{ title: 'Creacion de productos',stylesheets: 'productAdd.css'})
- %> 
+<%- include('./partials/head',{title: 'Creacion de productos',stylesheets: 'productAdd.css'})%> 
 
 <body>
 
@@ -23,8 +22,13 @@
 
                     <div class="main_formulario_categoria">
                         <label for="category">Categoría</label></br>
-                        <input type="radio" name="category" value="destacados">Destacados</br>
-                        <input type="radio" name="category" value="in-sale">Ofertas</br>
+                        <select name="categoryId" id="category">
+                            <option value=""hidden selected>Elegi la categoría</option>
+                            <% categories.forEach(({id,name}) => { %>
+                                <option value="<%= id %>"><%= name %></option>
+                            <% }) %>
+                        </select>
+                    
                     </div>
 
                     <div class="main_formulario_precio">

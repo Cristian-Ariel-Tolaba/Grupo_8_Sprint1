@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('./partials/head',{stylesheets: 'productEdit.css'}) 
+    <%- include('./partials/head',{title: 'Edicion de producto',stylesheets: 'productEdit.css'}) 
     %> 
 
 <body>
@@ -22,9 +22,13 @@
 
                     <div class="main_formulario_categoria">
                         <label for="category">Categoría</label></br>
-                        <input type="radio" name="category" id="category1" value="destacados" <%= product.category === 'destacados' && 'checked' %>>Destacados</br>
-
-                         <input type="radio" name="category" id="category2" value="in-sale" <%= product.category === 'in-sale' && 'checked' %>> Ofertas</br>
+                      
+                        <select name="categoryId" id="category">
+                            <option value=""hidden selected>Elegi la categoría</option>
+                               <% categories.forEach(({id, name}) => { %>
+                                <option value="<%=id%>"<%= id === product.categoryId && 'selected' %>><%=name%></option>
+                               <% }) %>
+                        </select>
                     </div>
 
                     <div class="main_formulario_precio">
@@ -39,7 +43,7 @@
 
                     <div class="main_formulario_descripcion">
                         <label for="description">Descripción</label></br>
-                        <textarea name="description" id="description" value="<%= product.description%>"></textarea>
+                        <textarea id="description" name="description" value="<%= product.description %>"></textarea>
                     </div>
 
                     <div class="main_formulario_imagen">

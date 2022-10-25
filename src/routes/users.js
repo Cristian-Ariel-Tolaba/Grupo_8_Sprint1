@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-/*  */
-const { login,processLogin, register,processRegister, passwordReset, profile, logout } = require('../controllers/userController');
+const { login,processLogin, register,processRegister, passwordReset, profile, updateProfile, logout } = require('../controllers/userController');
 
 const uploadUser = require('../middlewares/upLoadFilesUser');
 
@@ -15,9 +14,10 @@ router
   .get('/login', login )
   .post('/login', loginValidator, processLogin)
   .get('/register', register)
-  .post('/register', uploadUser.single('avatar'), registerValidator, processRegister)
+  .post('/register', uploadUser.single('avatar'), registerValidator, processRegister) 
   .get('/passwordReset', passwordReset)
-  .get('/profile', userSessionCheck, profile)
+  .get('/profile', userSessionCheck, profile)  
+  .put('/profile',uploadUser.single('avatar'), updateProfile)
   .get('/logout', logout)
 
 

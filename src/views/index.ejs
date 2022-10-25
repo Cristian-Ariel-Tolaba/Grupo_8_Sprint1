@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('./partials/head',{ title: 'Home' ,stylesheets: 'home.css' }) %>
+<%- include('./partials/head',{title: 'Home' ,stylesheets: 'home.css' }) %>
 
     <body>
         <%- include('./partials/header') %>
@@ -12,10 +12,10 @@
                 <div class="main-products">
                     <h2>DESTACADOS</h2>
 
-                    <% destacados.forEach(({id, name, image, price, discount,description})=> { %>
+                    <% destacados.forEach(({id, name, images, price, discount,description})=> { %>
 
                         <div class="main-products">
-                            <img src="/images/<%= image %>" alt="">
+                            <img src="/images/<%= images[0].file%>" alt="">
                             <h2>
                                 <%= name %>
                             </h2>
@@ -31,10 +31,10 @@
 
                             <h2>OFERTAS</h2>
 
-                            <% inSale.forEach(({id, name, image, price, discount,description})=> { %>
+                            <% inSale.forEach(({id, name, images, price, discount,description})=> { %>
 
                                 <div class="main-products">
-                                    <img src="/images/<%= image %>" alt="">
+                                    <img src="/images/<%= images[0].file %>" alt="">
                                     <h2>
                                         <%= name %>
                                     </h2>

@@ -12,10 +12,10 @@
         <div class="main-products">
             <!--<h1>Todos los productos</h1>--> 
 
-            <% products.forEach(({id, name, image, price, discount,description}) => { %>
+            <% products.forEach(({id, name,images,price, discount,description}) => { %>
 
             <div class="main-products">
-                <img src="/images/<%=image%>" alt="">
+                <img src="/images/<%=images[0].file%>" alt="">
                 <h2><%= name%> </h2>
                 <p>$<%=toThousand(price) %></p>
                 <p>"<%= description %>"</p>

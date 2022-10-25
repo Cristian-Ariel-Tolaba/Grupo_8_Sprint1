@@ -1,103 +1,135 @@
-const {loadProducts, storeProducts} = require('../data/productsModule');
+const db = require('../database/models');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
     index: (req, res) => {
-        const products = loadProducts();
-        return res.render('index', {          
-            products, 
-            toThousand
-        })
+        db.Product.findAll({include: ['images']})
+            .then(products=>{
+                return res.render('products',{
+                    products, toThousand
+                })
+            })
+            .catch(error=>console.log(error))
     },
 
     list: (req, res) => {
-        const products = loadProducts();
-        return res.render('productList', {          
-            products, 
-            toThousand
-        })
+        db.Product.findAll({include: ['images']})
+            .then(products=>{
+                return res.render('productList',{
+                    products, toThousand
+                })
+            })
+            .catch(error=>console.log(error))
     },
 
     detail: (req, res) => {
-        const products = loadProducts();
-        const product = products.find(product => product.id === +req.params.id);
-        return res.render('productDetail', {
-            title: 'Detalle del producto',
-            product,
-            toThousand
-        });
+        db.Product.findByPk(req.params.id,{
+            include: ['images']
+        })
+        .then(product=> res.render('productDetail',{
+            title: 'Detalle del producto', product, toThousand
+        }))
+        .catch(error=>console.log(error))
     },
 
     create: (req, res) => {
-        return res.render('productCreateForm')
+        
+        db.Category.findAll({
+            attributes: ['id','name'],
+            order: ['name']
+        })
+            .then(categories=>{
+                return res.render('productCreateForm',{
+                    categories
+                })
+            })
+            .catch(error=>console.log(error))
     },
 
     store: (req, res) => {
-        const {name, price, discount, description, category} = req.body
-
-        const products = loadProducts();
-        const newProduct = {
-            id: (products[products.length -1].id) + 1,
-            name:name,
-            description: description,
-            price: +price,
-            discount: +discount,
-            image: req.file ? req.file.filename : 'default-image.png',
-            category
-
-        }
-
-        const productsModify = [...products, newProduct];
-
-        storeProducts(productsModify);
-        return res.redirect('/products/list')
+       
+        db.Product.create({
+            ...req.body,
+            name: req.body.name.trim(),           
+            description: req.body.description.trim()
+            
+        })
+        .then(
+            product => {
+             if(req.files){
+                let images = req.files.map(({filename})=>{
+                    return {
+                        file: filename,
+                        productId: product.id
+                    }
+                })
+                db.Image.bulkCreate(images,{
+                    validate: true
+                }).then((result)=>console.log(result))
+            } 
+            
+            return res.redirect('/products/list')
+            
+        })
+        .catch(error=>console.log(error))
+        
     },
 
     edit: (req, res) => {
-        const products = loadProducts();
-        const product = products.find(product => product.id === +req.params.id);
-        return res.render('productEditForm',{
-            title: 'Edicion de producto',
-            product
-        })
+
+        let product = db.Product.findByPk(req.params.id,{
+            include: [{association: 'category'}]
+        });
+
+        let categories = db.Category.findAll({
+            attributes: ['id', 'name']
+        });
+       
+        Promise.all([categories, product])
+            .then(([categories, product])=>{
+                return res.render('productEditForm',{
+                    product, categories
+                })
+            })
+            .catch(error => console.log(error));
     },
 
     update: (req, res) => {
-        const products = loadProducts();
-        const {name, price, discount, category, description} = req.body;
+      
+        db.Product.update(
+            {
+                ...req.body,
+                name: req.body.name.trim(),
+                description: req.body.description.trim()
+            },
+            {
+                where: {id: req.params.id}
+            }
+        )
+        .then(()=> res.redirect('/products/detail/' + req.params.id))
+        .catch(error => console.log(error))
 
-        const productsModify = products.map(product => {
-            if(product.id === +req.params.id){
-                return {
-                    ...product,
-                    name: name,
-                    price : +price,
-                    discount : +discount,
-                    description: description,
-                    image: req.file ? req.file.filename : 'default-image.png',
-                    category
-                }
-            }return product
-        })
-
-        storeProducts(productsModify);
-        return res.redirect('/products/detail/' +req.params.id)
     },
 
     destroy: (req, res) => {
-        const {id} = req.params;
-        const products = loadProducts();
-
-        const productsModify = products.filter(product => product.id !== +id);
-
-        storeProducts(productsModify);
-        return res.redirect('/products/list')
+        db.Product.destroy({
+            where:
+                {
+                    id: req.params.id
+                }
+            })
+            .then(()=>res.redirect('/products/list'))
+            .catch(error=> console.log(error))
     },
 
     cart: (req, res) => {
-        return res.render('productCart',{
-            title : 'Mi carrito'
-        })
+        db.Product.findAll()
+            .then(()=>{
+                return res.render('productCart',{
+                    title : 'Mi carrito'
+                })
+            })
+            .catch(error => console.log(error))
     }
 };

@@ -5,54 +5,39 @@
 <body>
     <%- include('./partials/header') %> 
    <main>
-    <%- include('./partials/baner') %> 
 
     <div class="mi_perfil" >
 
         <div class="mi_perfil_foto">
-            <img src="/images/<%= user.avatar ? user.avatar: 'default-user.png'%>" alt="Insertar Imagen">
+            
+            <img src="/images/<%= user.avatar %>" alt="">
         </div>
         <div>
             <h1 >Mi Perfil</h1>
         </div>
         <div class="mi_perfil_informacion">
 
-            <form action="" class="form">
+            <form action="/users/profile?_method=PUT" class="form" enctype="multipart/form-data" method="post">
+
+               
 
                 <div class="inputContainer">
                    <label class="label">Nombre</label></br>
-                    <input type="text" class="input" value="<%= user.firstname %>">
+                    <input type="text" class="input" value="<%= user.firstname %>" name="firstname">
                     
                 </div>
 
                 <div class="inputContainer">
                     <label class="label">Apellido</label></br>
-                    <input type="text" class="input" value="<%= user.lastname%>">
+                    <input type="text" class="input" value="<%= user.lastname%>" name="lastname">
                     
                 </div>
-
                 <div class="inputContainer">
-                    <label class="label">Nombre de usuario</label></br>
-                    <input type="text" class="input" value="<%= user.username %>">                   
-                </div>
+                <label for="avatar" id="btnRegister" style="text-align: center;">Imagen de perfil</label>
+                <input type="file" name="avatar" id="avatar">
+            </div>
 
-                <div class="inputContainer">
-                    <label class="label">Email</label></br>
-                    <input type="email" class="input" value="<%= user.email %>">
-                    
-                </div>
-
-                <div class="inputContainer">
-                    <label class="label">Telefono</label></br>
-                    <input type="text" class="input">
-                    
-                </div>
-
-                <div class="inputContainer">
-                    <label class="label">Domicilio</label></br>
-                    <input type="text" class="input">                   
-                </div>
-
+             
                 <div class="inputContainer">
                     <button type="submit">Guardar</button>     
                     <button type="reset">Cancelar</button>             
