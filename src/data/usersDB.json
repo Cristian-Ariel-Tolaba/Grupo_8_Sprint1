@@ -48,5 +48,15 @@
       "password": "$2a$12$5rkrksrm9L8c1PHsoEtUc.P2tpegF6BJ5131I97Lk2aVeNnJbr.p.",
       "rol": "admin",
       "avatar": "default-user.png"
+   },
+   {
+      "id": 6,
+      "firstname": "Julieta",
+      "lastname": "Velenzuela",
+      "username": "Julieta.V",
+      "email": "probando@hotmail.com",
+      "password": "$2a$12$3z/rkluyFFkuYgJIu/RmS.DVQWITdg6HJKaswvoLr4DuytoUqqB3O",
+      "rol": "user",
+      "avatar": "default-user.png"
    }
 ]

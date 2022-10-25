@@ -4,19 +4,80 @@
 
 body {
     margin: 0px;
+    padding: 0;
+}
+
+
+
+/*header*/
+header {
+    border: 5px solid black;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/Banner.webp");
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#header img {
+    width: 110px;
+}
+
+#header input {
+    width: 120px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+#header button {
+    border: 1px solid black;
+    border-radius: 10px;
+    font-family: "roboto";
+    font-weight: bold;
+    padding: 3px;
+}
+
+
+
+.header-nav ul {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.header-nav a {
+    color: azure;
+    font-family: "open sans";
+    text-decoration: none;
+}
+
+#welcome-img img {
+    width: 100%;
+    margin-top: 5px;
+    border: 5px solid black;
+}
+
+h1 {
+    color: azure;
+    text-align: center;
+    font-family: "open sans";
 }
 
 /*main*/
 
 main {
-    height: 550px;
+    height: 856px;
     background-image: url("/images/Banner.webp");
     background-size: 600px;
     background-position: center;
 }
 
 .mi_perfil {
-    height: 100%;
+    height: 700px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -41,20 +102,72 @@ h1 {
     margin-bottom: 8px;
 }
 
+/*footer*/
+
+footer {
+
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/VinoYSeFue.jpg");
+    border: 3px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    font-family: "roboto";
+}
+
+#footer img {
+    margin-left: 16px;
+}
+
+#footer ul {
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+#footer a {
+    text-decoration: none;
+    color: azure;
+}
+
+footer p {
+    font-size: 8px;
+    margin-bottom: 10px;
+    color: azure;
+}
+
 @media (min-width: 768px) {
+
+    #header input {
+        width: 380px;
+      }
+    
+
     main {
-        height: 700px;
+        height: 1000px;
     }
 
     .mi_perfil {
         backdrop-filter: blur(10px);
         height: 700px;
-        width: 500px;
+        width: 550px;
         margin-left: 150px;
     }
 }
 
 @media (min-width: 1024px) {
+
+    #header input {
+        width: 500px;
+      }
+      
+    main {
+        height: 1100px;
+    }
+
     .mi_perfil {
         margin-left: 260px;
     }
