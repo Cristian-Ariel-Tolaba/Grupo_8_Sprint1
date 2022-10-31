@@ -4,15 +4,80 @@
 
 body {
     margin: 0px;
-    background-image: url("/images/Banner.webp");
-    background-size: cover;
-    background-position: center;
+    padding: 0;
+}
+
+
+
+/*header*/
+header {
+    border: 5px solid black;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/Banner.webp");
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#header img {
+    width: 110px;
+}
+
+#header input {
+    width: 120px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+#header button {
+    border: 1px solid black;
+    border-radius: 10px;
+    font-family: "roboto";
+    font-weight: bold;
+    padding: 3px;
+}
+
+
+
+.header-nav ul {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.header-nav a {
+    color: azure;
+    font-family: "open sans";
+    text-decoration: none;
+}
+
+#welcome-img img {
+    width: 100%;
+    margin-top: 5px;
+    border: 5px solid black;
+}
+
+h1 {
+    color: azure;
+    text-align: center;
+    font-family: "open sans";
 }
 
 /*main*/
 
+main {
+    height: 550px;
+    background-image: url("/images/Banner.webp");
+    background-size: 600px;
+    background-position: center;
+}
+
 .mi_perfil {
-    height: 700px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -23,6 +88,13 @@ body {
     width: 150px;
     border-radius: 80px;
 }
+
+
+.mi_perfil_informacion {
+    margin-left: 80px;
+
+}
+
 
 h1 {
     margin: 0px;
@@ -35,6 +107,11 @@ h1 {
 .inputContainer input {
     margin-top: 8px;
     margin-bottom: 8px;
+}
+
+.inputContainer button {
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 /*footer*/
@@ -78,18 +155,24 @@ footer p {
 
     #header input {
         width: 380px;
-      }
-    
+    }
+
 
     main {
-        height: 1000px;
+        height: 580px;
     }
 
     .mi_perfil {
         backdrop-filter: blur(10px);
-        height: 700px;
-        width: 550px;
-        margin-left: 150px;
+        height: 580px;
+        width: 400px;
+        margin-left: 210px;
+
+    }
+
+    .inputContainer button {
+
+        margin-left: 35px;
     }
 }
 
@@ -97,14 +180,18 @@ footer p {
 
     #header input {
         width: 500px;
-      }
-      
+    }
+
     main {
-        height: 1100px;
+        height: 640px;
+        padding: 20px;
     }
 
     .mi_perfil {
-        margin-left: 260px;
+        width: 500px;
+        height: 600px;
+        margin-left: 280px;
+
     }
 
     .inputContainer label {
