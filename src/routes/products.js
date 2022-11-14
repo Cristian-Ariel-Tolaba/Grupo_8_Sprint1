@@ -21,6 +21,6 @@ router
     .put('/update/:id',uploadProduct.array('image'), update)
 
     .delete('/delete/:id', adminUserCheck, destroy)
-    .get('/cart', userUserCheck, cart)
+    .get('/cart', cart)
 
 module.exports = router;

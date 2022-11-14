@@ -15,11 +15,12 @@
                <% if (locals.userLogin) { %>
                     <li><a href="/users/profile">Hola <%= locals.userLogin.firstname %> !</a></li>
                     <li><a href="/products/cart">Mi Carrito</a></li>
-                    <li><a href="/users/logout">Salir</a></li>
-                    <% if (locals.userLogin.rol === "admin"){ %>
-                        <li><a href="/products/create">Nuevo Producto</a></li>
-                        
+                    
+                    <% if (locals.userLogin.rolId === 1){ %>                       
+                        <li><a href="/products/create">Nuevo Producto</a></li>                       
                     <% } %>
+
+                    <li><a href="/users/logout">Salir</a></li>
 
                 <% }else {%>
                     <li><a href="/users/register">Registrate</a></li>

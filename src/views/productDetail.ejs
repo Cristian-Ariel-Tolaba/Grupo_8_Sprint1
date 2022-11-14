@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('./partials/head',{stylesheets: 'productDetail.css'})%> 
+<%- include('./partials/head',{stylesheets: 'productDetail.css'})%> 
 
 <body>
     <%- include('./partials/header') %> 
@@ -58,10 +58,12 @@
                     </div>
                 </div>
                 <div class="cotenedor_derecho_final">
-                    <button href="/products/cart">Añadir al carrito</button>
+                    <% if (locals.userLogin) { %>
+                    <button><a href="/products/cart">Carrito</a></button>                 
                 </div>
 
                 <div class="editar-eliminar">
+                    <% if (locals.userLogin.rolId === 1){ %> 
                     <div>
                         <button><a href="/products/edit/<%= product.id %>" class="">Editar</a></button>
                     </div>
@@ -70,6 +72,10 @@
                             <button type="submit" class=" ">Eliminar</button>
                         </form>
                     </div>
+                    <% } %>
+                   
+                        
+                    <% } %>
                 </div>
 
             </div>
