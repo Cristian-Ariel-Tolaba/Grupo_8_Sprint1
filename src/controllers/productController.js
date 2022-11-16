@@ -2,6 +2,9 @@ const db = require('../database/models');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+const {validationResult} = require('express-validator');
+
+
 module.exports = {
     index: (req, res) => {
         db.Product.findAll({include: ['images']})
@@ -49,31 +52,40 @@ module.exports = {
 
     store: (req, res) => {
        
-        db.Product.create({
-            ...req.body,
-            name: req.body.name.trim(),           
-            description: req.body.description.trim()
-            
-        })
-        .then(
-            product => {
-             if(req.files){
-                let images = req.files.map(({filename})=>{
-                    return {
-                        file: filename,
-                        productId: product.id
-                    }
-                })
-                db.Image.bulkCreate(images,{
-                    validate: true
-                }).then((result)=>console.log(result))
-            } 
-            
-            return res.redirect('/products/list')
-            
-        })
-        .catch(error=>console.log(error))
-        
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            db.Product.create({
+                ...req.body,
+                name: req.body.name.trim(),           
+                description: req.body.description.trim()
+                
+            })
+            .then(
+                product => {
+                 if(req.files){
+                    let images = req.files.map(({filename})=>{
+                        return {
+                            file: filename,
+                            productId: product.id
+                        }
+                    })
+                    db.Image.bulkCreate(images,{
+                        validate: true
+                    }).then((result)=>console.log(result))
+                } 
+                
+                return res.redirect('/products/list')
+                
+            })
+            .catch(error=>console.log(error))
+        }else{
+            res.render('productCreateForm',{
+                errors : errors.mapped(),
+                old : req.body
+            })   
+        }
+
     },
 
     edit: (req, res) => {
@@ -97,19 +109,30 @@ module.exports = {
 
     update: (req, res) => {
       
-        db.Product.update(
-            {
-                ...req.body,
-                name: req.body.name.trim(),
-                description: req.body.description.trim()
-            },
-            {
-                where: {id: req.params.id}
-            }
-        )
-        .then(()=> res.redirect('/products/detail/' + req.params.id))
-        .catch(error => console.log(error))
+        let errors = validationResult(req);
+        //return res.send(errors);
 
+        if(errors.isEmpty()){
+
+            db.Product.update(
+                {
+                    ...req.body,
+                    name: req.body.name.trim(),
+                    description: req.body.description.trim()
+                },
+                {
+                    where: {id: req.params.id}
+                }
+            )
+            .then(()=> res.redirect('/products/detail/' + req.params.id))
+            .catch(error => console.log(error))
+
+        }else{
+            res.render('productEditForm',{
+                errors : errors.mapped()
+            })
+        }
+        
     },
 
     destroy: (req, res) => {

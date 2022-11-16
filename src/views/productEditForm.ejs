@@ -14,10 +14,11 @@
                 <h5>Estás editando: <i><%= product.name %> </i></h5>
             </div>
             <div class="main_formulario">
-                <form action="/products/update/<%= product.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+                <form action="/products/update/<%= product.id %>?_method=PUT" method="post" >
                     <div class="main_formulario_nombre">
                         <label for="name">Nombre del producto</label></br>
                         <input type="text" name="name" placeholder="Nombre del producto" id="name" value="<%= product.name %>">
+                        <p><%= locals.errors && errors.name ? errors.name.msg : null %></p>
                     </div>
 
                     <div class="main_formulario_categoria">
@@ -29,11 +30,13 @@
                                 <option value="<%=id%>"<%= id === product.categoryId && 'selected' %>><%=name%></option>
                                <% }) %>
                         </select>
+                        <p><%= locals.errors && errors.categoryId ? errors.categoryId.msg : null %></p>
                     </div>
 
                     <div class="main_formulario_precio">
                         <label for="price">Precio del producto</label></br>
                         <input type="number" id="price" name="price" placeholder="Precio del producto" value="<%= product.price %>">
+                        <p><%= locals.errors && errors.price ? errors.price.msg : null %></p>
                     </div>
 
                     <div class="main_formulario_descuento">
@@ -43,12 +46,8 @@
 
                     <div class="main_formulario_descripcion">
                         <label for="description">Descripción</label></br>
-                        <textarea id="description" name="description" value="<%= product.description %>"></textarea>
-                    </div>
-
-                    <div class="main_formulario_imagen">
-                        <label>Cambiar imagen</label></br>
-                        <input type="file" name="image" id="image" accept=".jpg" multiple>
+                        <textarea id="description" name="description"><%= product.description %></textarea>
+                        <p><%= locals.errors && errors.description ? errors.description.msg : null %></p>
                     </div>
 
                     <div class="main_formulario_buttons">
