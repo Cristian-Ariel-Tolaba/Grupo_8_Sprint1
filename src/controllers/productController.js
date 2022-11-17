@@ -53,6 +53,7 @@ module.exports = {
     store: (req, res) => {
        
         let errors = validationResult(req);
+        //return res.send(errors);  ***consultar***
 
         if(errors.isEmpty()){
             db.Product.create({
@@ -110,7 +111,7 @@ module.exports = {
     update: (req, res) => {
       
         let errors = validationResult(req);
-        //return res.send(errors);
+        //return res.send(errors);  ***consultar***
 
         if(errors.isEmpty()){
 

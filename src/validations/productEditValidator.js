@@ -1,5 +1,5 @@
 const {check, body} = require('express-validator');
-//const db = require('../database/models');
+const db = require('../database/models');
 
 module.exports = [
     check('name')
@@ -23,7 +23,7 @@ module.exports = [
         .withMessage('Debe agregar una descripción').bail()
         .isLength({
             min : 5,
-            max : 20
-        }).withMessage('El nombre debe tener entre 5 y 20 caracteres')
+            max : 50
+        }).withMessage('La descripción debe tener entre 5 y 50 caracteres')
    
 ]

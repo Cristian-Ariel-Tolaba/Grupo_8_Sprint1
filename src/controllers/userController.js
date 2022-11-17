@@ -1,7 +1,5 @@
 const db = require('../database/models');
 
-//const {loadUsers, storeUsers} = require('../data/usersModule');
-
 const {validationResult} = require('express-validator');
 
 const bcryptjs = require('bcryptjs');
@@ -17,7 +15,7 @@ module.exports = {
       
     },
 
-    //consultar
+   
     processLogin : (req,res) => {
 
         let errors = validationResult(req);
@@ -50,7 +48,7 @@ module.exports = {
             return res.render('login',{
                 errors: errors.mapped(),
                 title: 'Login', 
-            stylesheets: 'login.css'
+                stylesheets: 'login.css'
             })
         }
 
@@ -64,7 +62,7 @@ module.exports = {
 
     },
   
-    //consultar
+    
     processRegister : (req,res) => {
 
          let errors = validationResult(req);
@@ -129,30 +127,42 @@ module.exports = {
     },
 
     updateProfile : (req, res) => {
-        const {firstname, lastname} = req.body;
-        db.User.update(
 
-            {
-                firstname: firstname.trim(),           
-                lastname: lastname.trim(),  
-                avatar: req.file ? req.file.filename : req.session.userLogin.avatar
+        let errors = validationResult(req);
+        //return res.send(errors);  ***consultar***
+        if(errors.isEmpty()){
 
-            },
-            {
-                where: {id: req.session.userLogin.id}
-            }
-        )
+            const {firstname, lastname} = req.body;
 
-        .then(()=> {
+            db.User.update(
 
-            req.session.userLogin.firstname = firstname;
-            if(req.file){
-                req.session.userLogin.avatar = req.file.filename
-            }
-            res.locals.userLogin = req.session.userLogin
-            res.redirect('/')
-        } )
-        .catch(error => console.log(error))
+                {
+                    firstname: firstname.trim(),           
+                    lastname: lastname.trim(),  
+                    avatar: req.file ? req.file.filename : req.session.userLogin.avatar
+
+                },
+                {
+                    where: {id: req.session.userLogin.id}
+                }
+            )
+            .then(()=> {
+
+                req.session.userLogin.firstname = firstname;
+                if(req.file){
+                    req.session.userLogin.avatar = req.file.filename
+                }
+                res.locals.userLogin = req.session.userLogin
+                res.redirect('/')
+            })
+            .catch(error => console.log(error))
+
+        }else{
+            return res.render('profile', {
+                title : 'Mi perfil', 
+                errors: errors.mapped()
+            })
+        }
     },
 
     logout : (req, res) => {

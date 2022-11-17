@@ -22,20 +22,22 @@
                
 
                 <div class="inputContainer">
-                   <label class="label">Nombre</label></br>
-                    <input type="text" class="input" value="<%= user.firstname %>" name="firstname">
-                    
+                    <label class="label" for="firstname">Nombre</label></br>
+                    <input type="text" class="input" value="<%= user.firstname %>" name="firstname" id="firstname">
+                    <p><%= locals.errors && errors.firstname ? errors.firstname.msg : null %></p>
                 </div>
 
                 <div class="inputContainer">
-                    <label class="label">Apellido</label></br>
-                    <input type="text" class="input" value="<%= user.lastname%>" name="lastname">
-                    
+                    <label class="label" for="lastname">Apellido</label></br>
+                    <input type="text" class="input" value="<%= user.lastname%>" name="lastname" id="lastname">
+                    <p><%= locals.errors && errors.lastname ? errors.lastname.msg : null %></p>
                 </div>
+
                 <div class="inputContainer">
-                <label for="avatar" id="btnRegister" style="text-align: center;">Imagen de perfil</label></br>
-                <input type="file" name="avatar" id="avatar">
-            </div>
+                    <label for="avatar" id="btnRegister" style="text-align: center;">Imagen de perfil</label></br>
+                    <input type="file" name="avatar" id="avatar" accept="image/*" multiple>
+                    <p><%= locals.errors && errors.avatar ? errors.avatar.msg : null %></p>
+                </div>
 
              
                 <div class="inputContainer">

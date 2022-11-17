@@ -5,7 +5,7 @@ const { login,processLogin, register,processRegister, passwordReset, profile, up
 
 const uploadUser = require('../middlewares/upLoadFilesUser');
 
-const {loginValidator, registerValidator} = require('../validations');
+const {loginValidator, registerValidator, profileValidator} = require('../validations');
 
 const userSessionCheck = require('../middlewares/userSessionCheck');
 
@@ -17,7 +17,7 @@ router
   .post('/register', uploadUser.single('avatar'), registerValidator, processRegister) 
   .get('/passwordReset', passwordReset)
   .get('/profile', userSessionCheck, profile)  
-  .put('/profile',uploadUser.single('avatar'), updateProfile)
+  .put('/profile',uploadUser.single('avatar'), profileValidator, updateProfile)
   .get('/logout', logout)
 
 
