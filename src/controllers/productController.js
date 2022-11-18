@@ -53,7 +53,6 @@ module.exports = {
     store: (req, res) => {
        
         let errors = validationResult(req);
-        //return res.send(errors);  ***consultar***
 
         if(errors.isEmpty()){
             db.Product.create({
@@ -81,10 +80,19 @@ module.exports = {
             })
             .catch(error=>console.log(error))
         }else{
-            res.render('productCreateForm',{
-                errors : errors.mapped(),
-                old : req.body
-            })   
+
+            db.Category.findAll({
+            attributes: ['id','name'],
+            order: ['name']
+        })
+            .then(categories=>{
+                return res.render('productCreateForm',{
+                    categories,
+                    errors: errors.mapped(),
+                    old: req.body
+                })
+            })
+            .catch(error=>console.log(error))  
         }
 
     },
@@ -111,7 +119,6 @@ module.exports = {
     update: (req, res) => {
       
         let errors = validationResult(req);
-        //return res.send(errors);  ***consultar***
 
         if(errors.isEmpty()){
 
@@ -129,9 +136,21 @@ module.exports = {
             .catch(error => console.log(error))
 
         }else{
-            res.render('productEditForm',{
-                errors : errors.mapped()
-            })
+            let product = db.Product.findByPk(req.params.id,{
+                include: [{association: 'category'}]
+            });
+    
+            let categories = db.Category.findAll({
+                attributes: ['id', 'name']
+            });
+           
+            Promise.all([categories, product])
+                .then(([categories, product])=>{
+                    return res.render('productEditForm',{
+                        product, categories, errors: errors.mapped()
+                    })
+                })
+                .catch(error => console.log(error));
         }
         
     },

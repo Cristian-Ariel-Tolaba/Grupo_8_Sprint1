@@ -1,7 +1,5 @@
 const db = require('../database/models');
-
 const {validationResult} = require('express-validator');
-
 const bcryptjs = require('bcryptjs');
 
 
@@ -15,10 +13,10 @@ module.exports = {
       
     },
 
-   
     processLogin : (req,res) => {
 
         let errors = validationResult(req);
+
         if(errors.isEmpty()){
             db.User.findOne({
                 where : {
@@ -62,13 +60,13 @@ module.exports = {
 
     },
   
-    
     processRegister : (req,res) => {
 
-         let errors = validationResult(req);
+        let errors = validationResult(req);
+
         if(errors.isEmpty()){
           
-             const {firstname, lastname, email, password} = req.body;
+            const {firstname, lastname, email, password} = req.body;
 
             db.User.create({
 
@@ -93,43 +91,28 @@ module.exports = {
                 old: req.body
             })
         }
-    
-       
-       
            
-    },
-
-    passwordReset : (req, res) => {
-       
-        db.User.findAll()
-            .then(()=>{
-                return res.render('passwordReset',{
-                    title : 'PasswordReset',
-                    stylesheets: 'passwordReset.css'
-                })
-            })
-            .catch(error=> console.log(error))
     },
 
     profile : (req, res) => {
         
-           db.User.findByPk(req.session.userLogin.id,{
-                include: [{association: 'rol'}]
-            })
-                .then(user=>{
-                    return res.render('profile',{
-                        title : 'Mi perfil', 
-                        user
-                    })
+        db.User.findByPk(req.session.userLogin.id,{
+            include: [{association: 'rol'}]
+        })
+            .then(user=>{
+                return res.render('profile',{
+                    title : 'Mi perfil', 
+                    user
                 })
-                .catch(error => console.log(error));
+            })
+            .catch(error => console.log(error));
   
     },
 
     updateProfile : (req, res) => {
 
         let errors = validationResult(req);
-        //return res.send(errors);  ***consultar***
+        //return res.send(errors);  
         if(errors.isEmpty()){
 
             const {firstname, lastname} = req.body;
@@ -158,22 +141,26 @@ module.exports = {
             .catch(error => console.log(error))
 
         }else{
-            return res.render('profile', {
-                title : 'Mi perfil', 
-                errors: errors.mapped()
+            db.User.findByPk(req.session.userLogin.id,{
+                include: [{association: 'rol'}]
             })
+                .then(user=>{
+                    return res.render('profile',{
+                        title : 'Mi perfil', 
+                        user,
+                        errors: errors.mapped()
+                    })
+                })
+                .catch(error => console.log(error));
         }
     },
 
     logout : (req, res) => {
     
-         db.User.findAll()
-            .then(()=>{
-                req.session.destroy();
-                res.cookie('vinoysefue16', null,{maxAge: -1});
-                return res.redirect('/')
-            })
-            .catch(error=> console.log(error))
+        req.session.destroy();
+        res.cookie('vinoysefue16', null,{maxAge: -1});
+        return res.redirect('/')
+                
     }
 
 };

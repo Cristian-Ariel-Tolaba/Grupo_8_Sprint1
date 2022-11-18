@@ -23,7 +23,7 @@ module.exports = [
         .withMessage('Debe agregar una descripción').bail()
         .isLength({
             min : 5,
-            max : 50
-        }).withMessage('La descripción debe tener entre 5 y 50 caracteres')
+            max : 350
+        }).withMessage('La descripción debe tener entre 5 y 350 caracteres')
    
 ]
