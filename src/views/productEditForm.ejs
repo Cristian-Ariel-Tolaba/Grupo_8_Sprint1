@@ -18,7 +18,7 @@
                     <div class="main_formulario_nombre">
                         <label for="name">Nombre del producto</label></br>
                         <input type="text" name="name" placeholder="Nombre del producto" id="name" value="<%= product.name %>">
-                        <p><%= locals.errors && errors.name ? errors.name.msg : null %></p>
+                        <p><small id="advName"><%= locals.errors && errors.name ? errors.name.msg : null %></p>
                     </div>
 
                     <div class="main_formulario_categoria">
@@ -30,13 +30,13 @@
                                 <option value="<%=id%>"<%= id === product.categoryId && 'selected' %>><%=name%></option>
                                <% }) %>
                         </select>
-                        <p><%= locals.errors && errors.categoryId ? errors.categoryId.msg : null %></p>
+                        <p><small id="advCategory"><%= locals.errors && errors.categoryId ? errors.categoryId.msg : null %></small></p>
                     </div>
 
                     <div class="main_formulario_precio">
                         <label for="price">Precio del producto</label></br>
                         <input type="number" id="price" name="price" placeholder="Precio del producto" value="<%= product.price %>">
-                        <p><%= locals.errors && errors.price ? errors.price.msg : null %></p>
+                        <p><small id="advPrecio"><%= locals.errors && errors.price ? errors.price.msg : null %></small></p>
                     </div>
 
                     <div class="main_formulario_descuento">
@@ -47,7 +47,7 @@
                     <div class="main_formulario_descripcion">
                         <label for="description">Descripción</label></br>
                         <textarea id="description" name="description"><%= product.description %></textarea>
-                        <p><%= locals.errors && errors.description ? errors.description.msg : null %></p>
+                        <p><small id="advDescripcion"><%= locals.errors && errors.description ? errors.description.msg : null %></small></p>
                     </div>
 
                     <div class="main_formulario_buttons">
@@ -64,7 +64,7 @@
     </main>
 
     <%- include('./partials/footer') %> 
-
+    <script src="/js/editarValidacion.js"> </script>   
 </body>
 
 </html>
