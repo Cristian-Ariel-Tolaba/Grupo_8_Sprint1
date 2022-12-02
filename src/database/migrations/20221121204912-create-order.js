@@ -2,45 +2,51 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Carts', {
+    await queryInterface.createTable('Orders', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      orderId: {
+      date: {
+        type: Sequelize.DATE
+      },
+      total: {
+        type: Sequelize.INTEGER
+      },
+      userId: {
         type: Sequelize.INTEGER,
-        references : {
+        references: {
           model: {
-            tableName: 'Orders'
+            tableName: 'Users'
           },
           key: 'id'
         }
       },
-      productId: {
+      statusId: {
         type: Sequelize.INTEGER,
-        references : {
+        references: {
           model: {
-            tableName: 'Products'
+            tableName: 'Statuses'
           },
           key: 'id'
-        },
-        onDelete: 'cascade'
+        }
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {        
+      updatedAt: {
+        
         type: Sequelize.DATE
       },
-      deletedAt: {      
+      deletedAt: {       
         type: Sequelize.DATE
       }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Carts');
+    await queryInterface.dropTable('Orders');
   }
 };

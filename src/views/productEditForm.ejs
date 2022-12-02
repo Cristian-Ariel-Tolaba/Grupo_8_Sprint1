@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('./partials/head',{title: 'Edicion de producto',stylesheets: 'productEdit.css'}) 
-    %> 
+    <%- include('./partials/head',{title: 'Edicion de producto',stylesheets: 'productEdit.css'})%> 
 
 <body>
     
@@ -14,29 +13,32 @@
                 <h5>Estás editando: <i><%= product.name %> </i></h5>
             </div>
             <div class="main_formulario">
-                <form action="/products/update/<%= product.id %>?_method=PUT" method="post" >
+                <form action="/products/update/<%= product.id %>?_method=PUT" method="post" id="form-edit">
                     <div class="main_formulario_nombre">
                         <label for="name">Nombre del producto</label></br>
-                        <input type="text" name="name" placeholder="Nombre del producto" id="name" value="<%= product.name %>">
-                        <p><small id="advName"><%= locals.errors && errors.name ? errors.name.msg : null %></p>
+                        <input type="text" name="name" class="form-control" placeholder="Nombre del producto" id="name" value="<%= product.name %>">
+                        <p><%= locals.errors && errors.name ? errors.name.msg : null %></p>
+                        <p id="msgNameEdit"></p>
                     </div>
 
                     <div class="main_formulario_categoria">
                         <label for="category">Categoría</label></br>
                       
-                        <select name="categoryId" id="category">
+                        <select name="categoryId" id="category" class="form-control">
                             <option value=""hidden selected>Elegi la categoría</option>
                                <% categories.forEach(({id, name}) => { %>
                                 <option value="<%=id%>"<%= id === product.categoryId && 'selected' %>><%=name%></option>
                                <% }) %>
                         </select>
-                        <p><small id="advCategory"><%= locals.errors && errors.categoryId ? errors.categoryId.msg : null %></small></p>
+                        <p><%= locals.errors && errors.categoryId ? errors.categoryId.msg : null %></p>
+                        <p id="msgCategoryEdit"></p>
                     </div>
 
                     <div class="main_formulario_precio">
                         <label for="price">Precio del producto</label></br>
-                        <input type="number" id="price" name="price" placeholder="Precio del producto" value="<%= product.price %>">
-                        <p><small id="advPrecio"><%= locals.errors && errors.price ? errors.price.msg : null %></small></p>
+                        <input type="number" id="price" class="form-control" name="price" placeholder="Precio del producto" value="<%= product.price %>">
+                        <p><%= locals.errors && errors.price ? errors.price.msg : null %></p>
+                        <p id="msgPriceEdit"></p>
                     </div>
 
                     <div class="main_formulario_descuento">
@@ -46,13 +48,14 @@
 
                     <div class="main_formulario_descripcion">
                         <label for="description">Descripción</label></br>
-                        <textarea id="description" name="description"><%= product.description %></textarea>
-                        <p><small id="advDescripcion"><%= locals.errors && errors.description ? errors.description.msg : null %></small></p>
+                        <textarea id="description" name="description" class="form-control"><%= product.description %></textarea>
+                        <p id="descriptionInfo" hidden><span id="numberCharacter">disponibles</span></p>
+                        <p id="msgDescriptionEdit"></p>
                     </div>
 
                     <div class="main_formulario_buttons">
                         <div>
-                            <button type="submit">Guardar</button>
+                            <button type="submit" id="btn-submit" disabled>Guardar</button>
                         </div>
                         <div>
                             <button type="reset">Cancelar</button>
@@ -64,6 +67,7 @@
     </main>
 
     <%- include('./partials/footer') %> 
+    <%- include('./partials/scripts') %> 
     <script src="/js/editarValidacion.js"> </script>   
 </body>
 

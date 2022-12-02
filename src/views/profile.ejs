@@ -17,31 +17,34 @@
         </div>
         <div class="mi_perfil_informacion">
 
-            <form action="/users/profile?_method=PUT" class="form" enctype="multipart/form-data" method="post">
+            <form action="/users/profile?_method=PUT" class="form" enctype="multipart/form-data" method="post" id="form-profile">
 
                
 
                 <div class="inputContainer">
                     <label class="label" for="firstname">Nombre</label></br>
-                    <input type="text" class="input" value="<%= user.firstname %>" name="firstname" id="firstname">
-                    <p><small id="advName"><%= locals.errors && errors.firstname ? errors.firstname.msg : null %></small></p>
+                    <input type="text" class="form-control" value="<%= user.firstname %>" name="firstname" id="firstname">
+                    <p><%= locals.errors && errors.firstname ? errors.firstname.msg : null %></p>
+                    <p id="msgFirstname"></p>
                 </div>
 
                 <div class="inputContainer">
                     <label class="label" for="lastname">Apellido</label></br>
-                    <input type="text" class="input" value="<%= user.lastname%>" name="lastname" id="lastname">
-                    <p><small id="advLastName"><%= locals.errors && errors.lastname ? errors.lastname.msg : null %></small></p>
+                    <input type="text" class="form-control" value="<%= user.lastname%>" name="lastname" id="lastname">
+                    <p><%= locals.errors && errors.lastname ? errors.lastname.msg : null %></p>
+                    <p id="msgLastname"></p>
                 </div>
 
                 <div class="inputContainer">
                     <label for="avatar" id="btnRegister" style="text-align: center;">Imagen de perfil</label></br>
                     <input type="file" name="avatar" id="avatar" accept="image/*" multiple>
                     <p><%= locals.errors && errors.avatar ? errors.avatar.msg : null %></p>
+                    <p id="msgAvatar"></p>
                 </div>
 
              
                 <div class="inputContainer">
-                    <button type="submit">Guardar</button>     
+                    <button type="submit" id="btn-submit" disabled>Guardar</button>     
                     <button type="reset">Cancelar</button>             
                 </div>
 
@@ -53,6 +56,7 @@
    </main>
    
    <%- include('./partials/footer') %> 
+   <%- include('./partials/scripts') %> 
    <script src="/js/perfilValidacion.js"> </script>   
 
 </body>

@@ -1,118 +1,165 @@
-console.log('¡Conexion exitosa!');
+console.log('conect succeful!');
 
-const $ =(element) => document.getElementById(element)
-const qs = (element)=> document.querySelector(element)
-const qsa = (element)=> document.querySelectorAll(element)
+const formStore = $('form-store');
+const elements = formStore.elements;
+console.log(elements);
 
-let totalCharacters = 500;
-let numberCharacters = 500; 
+let totalCharacter = 350;
+let numberCharacter = 350;
 
-const validField = (element, {target}) => {
+const msgError = (element, msg, event) => {
+    $(element).style.color = "red";
+    $(element).innerHTML = msg;
+    event.target.classList.add('is-invalid');
+  };
+  
+  const cleanError = (element, {target}) => {
+    target.classList.remove('is-invalid');
+    target.classList.remove('is-valid');
     $(element).innerHTML = null;
-    target.classList.remove('errorText')
+  };
+  
+  const validField = (element, {target}) => {
+    $(element).innerHTML = null;
+    target.classList.remove('is-invalid')
     target.classList.add('is-valid');
-};
+  };
 
-const checkFields = () => {
+  const checkFields = () => {
     let error = false;
-    for (let i = 0; i < elements.length - 1; i++) {
-        
-        if(!elements[i].value || elements[i].classList.contains('errorText')) {
-        error = true
+    for(let i = 0; i < elements.length - 1; i++){
+
+        if(!elements[i].value || elements[i].classList.contains('is-invalid')){
+            error = true
         }
         console.log(error)
     }
-}
-
-
-$("name").addEventListener("blur", function (e) {
-    switch (true) {
-        case !this.value.trim():
-            msgError("advName", "El nombre es necesario", e)
-            break;
-        case this.value.trim().length < 10:
-            msgError("advName", "El nombre del producto debe tener mínimo 10 carácteres", e)
-            break;            
-        default:
-            validField("advName", e)
-            break;
-    }   
-    checkFields()
-})
-
-$("name").addEventListener("focus", function (e) {
-    cleanError("advName", e)
-})
-
-
-("category").addEventListener("blur", function (e) {
-    switch (true) {
-        case !this.value:        
-            msgError("advCategory", "Debes elegir una categoría", e)
-            break;        
-        default:
-            validField("advCategory", e)
-            break;
-    }   
-    checkFields()
-})
-
-$("price").addEventListener("blur", function (e) {
-    switch (true) {
-        
-        case !this.value.trim():
-            msgError("advPrecio" , "Debe poner un precio")
-            break;
-       
-        case this.value < 9:
-            msgError("advPrecio" , "No puede ingresar un precio menor a 0")
-            break;
-        default: 
-            validField("advPrecio", e)
-            break;
-        }           
-    checkFields()
-    })
-
-
-$("price").addEventListener("keyup", function (e) {
-    let price = this.value
-    let discount = $("discount").value; 
     
-    $("finalPrice").innerText = `Precio final: ${+price - (+price * +discount / 100)}`
-    $("discountApply").innerText = `Descuento aplicado: ${+price * +discount / 100}`
-})
+    if(!error){
+        $('btn-submit').disabled = false;
+      }else{
+        $('btn-submit').disabled = true;
+      };
+  }
+
+ 
 
 
-
-//$("discount").addEventListener("blur", function (e) //
-
-
-
-$("description").addEventListener("blur", function (e) {
-    
+$('name').addEventListener('focus', function(e){
+    cleanError('msgName', e)
+});
+$('name').addEventListener('blur', function(e){
     switch (true) {
         case !this.value.trim():
-            msgError("advDescripcion", "Necesitas ingresar una descripción", e)
-            break;
-        case this.value.trim().length < 10:
-            msgError("advDescripcion", "Debe contener como mínimo 10 carácteres", e)
-            break;
-        case this.value.trim().length >= 500:
-            msgError("advDescripcion", "Debe contener como máximo 500 carácteres", e)
-            break;
+          msgError('msgName', 'El nombre es obligatorio', e)
+          break;
+        case this.value.trim().length < 5:
+          msgError('msgName', 'El nombre debe tener como mínimo 5 caracteres', e)
+          break;
         default:
-            validField("advDescripcion", e)
-            break;
+          validField('msgName', e)
+          break;
+      }
+      checkFields()
+
+});
+
+
+
+$('category').addEventListener('blur', function(e){
+    switch (true) {
+        case !this.value:
+          msgError('msgCategory','Debe indicar la categoría', e)
+          break;
+        default:
+          validField('msgCategory', e)
+          break;
+      }
+      checkFields() 
+});
+
+
+$('price').addEventListener('focus', function(e){
+    cleanError('msgPrice', e)
+});
+$('price').addEventListener('blur', function(e){
+    switch (true) {
+        case !this.value.trim():
+          msgError('msgPrice', 'El precio es requerido', e)
+          break;
+        case this.value < 0:
+          msgError('msgPrice', 'Debe ingresar solo números positivos', e)
+          break;
+        default:
+          validField('msgPrice', e)
+          break;
+      }
+      checkFields() 
+});
+
+$('price').addEventListener('keyup', function(e){
+    let price = this.value;
+    let discount = $('discount').value;
+    $('price-final').value = +price- (+price * +discount / 100);
+});
+$('discount').addEventListener('keyup', function(e){
+    let price = $('price').value;
+    let discount = this.value
+    $('price-final').value = +price- (+price * +discount / 100);
+});
+
+
+$('description').addEventListener('focus', function(e){
+    $('descriptionInfo').hidden = false;
+    $('numberCharacter').innerHTML = numberCharacter;
+
+    cleanError('msgDescription', e)
+
+});
+$('description').addEventListener('blur', function(e){
+    $('descriptionInfo').hidden = true;
+
+    switch (true) {
+      case !this.value.trim():
+        msgError('msgDescription', 'La descripción es requerido', e)
+        break;
+      case this.value.trim().length < 5:
+        msgError('msgDescription', 'La descripción debe tener como mínimo 5 caracteres', e)
+        break;
+      case this.value.trim().length >= 350:
+        msgError('msgDescription', 'La descripción no debe superar los 350 caracteres', e)
+        break;
+      default:
+        validField('msgDescription', e)
+        break;
     }
+
     checkFields()
-})
+});
+$('description').addEventListener('keyup', function (e) {
+   
+    numberCharacter = totalCharacter -  +this.value.length
 
-$("description").addEventListener("focus", function (e) {
-    $("numberCharacters").innerHTML = numberCharacters
+   $('numberCharacter').innerHTML =  numberCharacter;
 
-    cleanError("advDescripcion", e)
-})
+   if(numberCharacter <= 0){
+    $('descriptionInfo').hidden = true;
+    msgError('msgDescription', 'La descripción no debe superar los 350 caracteres', e)
+   }else {
+    $('descriptionInfo').hidden = false;
+    cleanError('msgDescription', e)
+   }
+});
 
 
+$('image').addEventListener('change', function(e){
+    //console.log(e.target.files[0]);
 
+    let reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload = () => {
+        $('imagePrev').src = reader.result
+    }
+
+    checkFields()
+});

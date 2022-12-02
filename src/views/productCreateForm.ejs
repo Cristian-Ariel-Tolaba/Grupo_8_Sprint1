@@ -13,57 +13,75 @@
                 <h5>Formulario de creación de productos</h5>
             </div>
             <div class="main_formulario">
-                <form action="/products/store" method="POST" enctype="multipart/form-data" id="formCreateProduct">
+                <form action="/products/store" method="POST" enctype="multipart/form-data" id="form-store">
 
                     <div class="main_formulario_nombre">
                         <label for="name">Nombre del producto</label></br>
-                        <input type="text" id="name" name="name" placeholder="Nombre del producto" value="<%= locals.old && old.name ? old.name : null %>">
-                        <p><small id="advName"><%= locals.errors && errors.name ? errors.name.msg : null %></small></p>
+                        <input type="text" id="name" name="name" placeholder="Nombre del producto" class="form-control" value="<%= locals.old && old.name ? old.name : null %>">
+                        <p><%= locals.errors && errors.name ? errors.name.msg : null %></p>
+                        <p id="msgName"></p>
                     </div>
 
                     <div class="main_formulario_categoria">
                         <label for="category">Categoría</label></br>
-                        <select name="categoryId" id="category">
+                        <select name="categoryId" id="category" class="form-control">
                             <option value=""hidden selected>Elegi la categoría</option>
                             <% categories.forEach(({id,name}) => { %>
                                 <option value="<%= id %>"><%= name %></option>
                             <% }) %>
                         </select>
-                        <p><small id="advCategoria"><%= locals.errors && errors.categoryId ? errors.categoryId.msg : null %></small></p>
+                        <p><%= locals.errors && errors.categoryId ? errors.categoryId.msg : null %></p>
+                        <p id="msgCategory"></p>
                     </div>
                   
                     <div class="main_formulario_precio">
                         <label for="price">Precio del producto</label></br>
-                        <input type="number" id="price" name="price" placeholder="Precio del producto" value="<%= locals.old && old.price ? old.price : null %>">
-                        <p><small id="advPrecio"><%= locals.errors && errors.price ? errors.price.msg : null %></small></p>
+                        <input type="number" id="price" name="price" placeholder="Precio del producto" class="form-control" value="<%= locals.old && old.price ? old.price : null %>">
+                        <p><%= locals.errors && errors.price ? errors.price.msg : null %></p>
+                        <p id="msgPrice"></p>
                     </div>
 
                     <div class="main_formulario_descuento">
                         <label for="discount">Descuento</label></br>
-                        <input type="number" id="discount" name="discount" placeholder="Descuento del producto" value="<%= locals.old && old.discount ? old.discount : 0 %>">
-                        
+                        <input type="number" id="discount" name="discount" placeholder="Descuento del producto" class="form-control" value="<%= locals.old && old.discount ? old.discount : 0 %>">
+                        <p id="msgDiscount"></p>
                     </div>
+                    <div class="main_formulario_descuento">
+						<label for="price-final">Precio Final:</label>
+						<input type="text" id="price-final" name="price-final" value='0' class="form-control">
+					</div>
 
                     <div class="main_formulario_descripcion">
                         <label for="description">Descripción</label></br>
-                        <textarea name="description" id="description" ><%= locals.old && old.description ? old.description : null %></textarea>
-                        <p><small id="advDescripcion"><%= locals.errors && errors.description ? errors.description.msg : null %></small></p>
+                        <textarea name="description" id="description" class="form-control"><%= locals.old && old.description ? old.description : null %></textarea>
+                        <p><%= locals.errors && errors.description ? errors.description.msg : null %></p>
+                        <p id="descriptionInfo" hidden><span id="numberCharacter">disponibles</span></p>
+                        <p id="msgDescription"></p>
                     </div>
 
-                    <div class="main_formulario_imagen">
-                        <label for="image">Agregar imagen</label></br>
-                        <input type="file" name="image"  id="image" accept="image/*" multiple>
-                        <p><small id="advImagen"><%= locals.errors && errors.image ? errors.image.msg : null %></small></p>
+
+                    <div class="main_formulario_image">
+                        <label for="image" >Agregar imagen</label></br>
+                        <input type="file" hidden name="image" id="image" accept="image/*">
+                        <p><%= locals.errors && errors.image ? errors.image.msg : null %></p>
+                        <p id="msgImage"></p>
                     </div>
 
-                    <div class="main_formulario_button"><button type="submit">CREAR</button></div>
+                    <div class="main_formulario_imagePrev">
+						<div class="card" style="height:150px">
+							<img src="" alt="" height="100%" id="imagePrev" style="object-fit: contain;">
+						</div>
+					</div>
+
+                    <div class="main_formulario_button"><button type="submit" id="btn-submit" disabled>CREAR</button></div>
                 </form>
             </div>
         </div>
     </main>
 
-    <%- include('./partials/footer') %> 
-    <script src="/js/crearValidacion.js"> </script>   
+     <%- include('./partials/footer') %>
+     <%- include('./partials/scripts') %>
+    <script src="/js/crearValidacion.js"> </script>
 </body>
 
 </html>
