@@ -1,0 +1,53 @@
+import React, { useEffect } from "react";
+import { useState } from "react";
+import UseFetch from "../../hooks/UseFetch";
+import Category from "./Category";
+
+const Categories = () => {
+
+const [state, setState] = useState({
+  loading: true,
+  categories: []
+});
+
+useEffect(()=>{
+  UseFetch('/categories')
+    .then(({data})=>{
+      setState({
+        loading: false,
+        categories: data
+      })
+    })
+}, [])
+
+
+  return (
+    <div className="col-lg-6 mb-4">
+      <div className="card shadow mb-4">
+        <div className="card-header py-3">
+          <h5 className="m-0 font-weight-bold text-gray-800">
+            Category in Data Base
+          </h5>
+        </div>
+        <div className="card-body">
+          <div className="row">
+
+            {
+              state.loading  
+              ?
+              <p>Cargando...</p>
+              :
+              state.categories.map((category,index)=>(
+                <Category {...category} key={category.name + index}/>
+              ))
+              
+            }
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Categories;
