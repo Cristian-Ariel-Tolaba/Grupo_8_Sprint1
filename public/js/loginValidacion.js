@@ -26,22 +26,6 @@ const validField = (element, {target}) => {
     target.classList.add('is-valid');
 };
 
-const checkFields = () => {
-    let error = false;
-    for(let i = 0; i < elements.length - 2; i++){
-
-        if(!elements[i].value || elements[i].classList.contains('is-invalid')){
-            error = true
-        }
-        console.log(error)
-    }
-    
-    if(!error){
-        $('btn-submit').disabled = false;
-      }else{
-        $('btn-submit').disabled = true;
-      };
-};
 
 
 $("email").addEventListener("blur",function(e){
@@ -57,7 +41,6 @@ $("email").addEventListener("blur",function(e){
             break;
     }
 
-    checkFields()
 
     $('email').addEventListener('focus', function({target}){
         cleanField('msgEmail', target)
@@ -78,10 +61,38 @@ $("password").addEventListener("blur",function(e){
             break;
     }
 
-    checkFields()
 
     $('password').addEventListener('focus', function({target}){
         cleanField('msgPassword', target)
     });
 });
 
+
+
+formLogin.addEventListener('keydown', (e) => {
+    if(e.key === "Enter" ){
+        e.preventDefault()
+    }
+}); 
+
+formLogin.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let error = false;
+
+    for (let i = 0; i < elements.length - 2; i++) {
+        
+        if(!elements[i].value || elements[i].classList.contains('is-invalid')){
+            error = true;
+            elements[i].classList.add('is-invalid')
+            $('msgError').hidden = false;
+            setTimeout(() => {
+                $('msgError').hidden = true;
+
+            }, 3000);
+        }
+        
+    }
+
+    !error &&  formLogin.submit()
+})
