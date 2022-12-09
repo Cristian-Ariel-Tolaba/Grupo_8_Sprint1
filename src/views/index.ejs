@@ -5,49 +5,56 @@
     <body>
         <%- include('./partials/header') %>
             <main>
-                <div id="welcome-img">
-                    <img src="/images/banner-inicio.png" alt="">
-                </div>
                 <h1>Nuestros productos</h1>
+
                 <div class="main-products">
+
+
                     <h2>DESTACADOS</h2>
 
-                    <% destacados.forEach(({id, name, images, price, discount,description})=> { %>
 
-                        <div class="main-products">
-                            <img src="/images/<%= images[0].file%>" alt="">
-                            <h2>
-                                <%= name %>
-                            </h2>
-                            <p>$<%=toThousand(price) %>
-                            </p>
-                            <p class="descripcion">"<%= description %>"</p>
-                            <form action="">
-                                <button><a href="/products/detail/<%= id %>">Ver mas</a></button>
-                            </form>
-                        </div>
+                    <div class="probando">
+                        <% destacados.forEach(({id, name, images, price, discount,description})=> { %>
 
-                        <% }) %>
+                            <div class="main-products">
+                                <img src="/images/<%= images[0].file%>" alt="">
+                                <h2>
+                                    <%= name %>
+                                </h2>
+                                <p>$<%=toThousand(price) %>
+                                </p>
+                                <p class="descripcion">"<%= description %>"</p>
+                                <form action="">
+                                    <button><a href="/products/detail/<%= id %>">Ver mas</a></button>
+                                </form>
+                            </div>
 
-                            <h2>OFERTAS</h2>
 
-                            <% inSale.forEach(({id, name, images, price, discount,description})=> { %>
+                            <% }) %>
+                    </div>
 
-                                <div class="main-products">
-                                    <img src="/images/<%= images[0].file %>" alt="">
-                                    <h2>
-                                        <%= name %>
-                                    </h2>
-                                    <p>$<%=toThousand(price)%>
-                                    </p>
-                                    <p class="descripcion">"<%= description %>"</p>
-                                    <form action="">
-                                        <button><a href="/products/detail/<%= id %>">Ver mas</a></button>
-                                    </form>
-                                </div>
 
-                                <% }) %>
+                    <h2>OFERTAS</h2>
 
+
+                    <div class="probando">
+                        <% inSale.forEach(({id, name, images, price, discount,description})=> { %>
+
+                            <div class="main-products">
+                                <img src="/images/<%= images[0].file %>" alt="">
+                                <h2>
+                                    <%= name %>
+                                </h2>
+                                <p>$<%=toThousand(price)%>
+                                </p>
+                                <p class="descripcion">"<%= description %>"</p>
+                                <form action="">
+                                    <button><a href="/products/detail/<%= id %>">Ver mas</a></button>
+                                </form>
+                            </div>
+
+                            <% }) %>
+                    </div>
                 </div>
             </main>
 
