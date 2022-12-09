@@ -1,89 +1,105 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('./partials/head',{stylesheets: 'productDetail.css'})%> 
+  <%- include('./partials/head',{stylesheets: 'productDetail.css'})%>
 
-<body>
-    <%- include('./partials/header') %> 
-  
+  <body>
+    <%- include('./partials/header') %>
+
     <main>
-        <%- include('./partials/baner')%> 
-        
-        <div class="main_principal">
-            
-            <div class="contenedor_izquierdo">
-                <div class="contenedor_izquierdo_foto">
-                    <img class="obj-fit-cover" src="/images/<%= product.images[0].file%>" alt="SinImagen">
-                </div>
-                <div class="contenedor_izquierdo_fotos_2">
-                    <div class="foto_1">
-                        <img class="obj-fit-cover" src="/images/agala.jpeg" alt="SinImagen">
-                    </div>
-                    <div class="foto_3">
-                        <img class="obj-fit-cover" src="/images/agala_foto3.jpg" alt="SinImagen">
-                    </div>
-                    <div class="foto_3">
-                        <img class="obj-fit-cover" src="/images/agala_foto4.jpg" alt="SinImagen">
-                    </div>
-                </div>
+      <%- include('./partials/baner')%>
+
+      <div class="main_principal">
+        <div class="contenedor_izquierdo">
+          <div class="contenedor_izquierdo_foto">
+            <img
+              class="obj-fit-cover"
+              src="/images/<%= product.images[0].file%>"
+              alt="SinImagen"
+            />
+          </div>
+          <div class="contenedor_izquierdo_fotos_2">
+            <div class="foto_1">
+              <img
+                class="obj-fit-cover"
+                src="/images/agala.jpeg"
+                alt="SinImagen"
+              />
             </div>
-            <div class="contenedor_derecho">
-                <div class="contenedor_derecho_superior">
-                    <p class="nombre"><%= product.name %></p>
-
-                    <% if (product.discount>0) { %>
-                    <h3>$<%=toThousand(product.price)%></h3>
-                    
-                    <h3>
-                        <%=product.discount%> % de descuento
-                    </h3>
-                    <% } else{%>
-                        <p>
-                            $<%=toThousand(product.price)%>
-                        </p>
-                     <% } %>
-
-
-                </div>
-                <div class="contenedor_derecho_inferior">
-                   
-                    <div class="contenedor_derecho_inferior_iconos_2">
-                        <div>
-                            <ul type="none">
-                                <li><i class="fa-solid fa-hand-holding-dollar"></i> Pagás $<%=toThousand(product.price-(product.price * product.discount) / 100) %>
-                                </li>
-                                <li><i class="fa-solid fa-credit-card"></i> Aceptamos todas las tarjetas</li>
-                                <li><i class="fa-solid fa-truck-fast"></i> Envios a todo el país</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="cotenedor_derecho_final">
-                    <% if (locals.userLogin) { %>
-                    <button><a href="/products/cart">Agregar al Carrito</a></button>                 
-                </div>
-
-                <div class="editar-eliminar">
-                    <% if (locals.userLogin.rolId === 1){ %> 
-                    <div>
-                        <button><a href="/products/edit/<%= product.id %>" class="">Editar</a></button>
-                    </div>
-                    <div>
-                        <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
-                            <button type="submit" class=" ">Eliminar</button>
-                        </form>
-                    </div>
-                    <% } %>
-                   
-                        
-                    <% } %>
-                </div>
-
+            <div class="foto_3">
+              <img
+                class="obj-fit-cover"
+                src="/images/agala_foto3.jpg"
+                alt="SinImagen"
+              />
             </div>
+            <div class="foto_3">
+              <img
+                class="obj-fit-cover"
+                src="/images/agala_foto4.jpg"
+                alt="SinImagen"
+              />
+            </div>
+          </div>
         </div>
+        <div class="contenedor_derecho">
+          <div class="contenedor_derecho_superior">
+            <p class="nombre"><%= product.name %></p>
 
+            <% if (product.discount>0) { %>
+            <h3>$<%=toThousand(product.price)%></h3>
+
+            <h3><%=product.discount%> % de descuento</h3>
+            <% } else{%>
+            <p>$<%=toThousand(product.price)%></p>
+            <% } %>
+          </div>
+          <div class="contenedor_derecho_inferior">
+            <div class="contenedor_derecho_inferior_iconos_2">
+              <div>
+                <ul type="none">
+                  <li>
+                    <i class="fa-solid fa-hand-holding-dollar"></i> Pagás
+                    $<%=toThousand(product.price-(product.price *
+                    product.discount) / 100) %>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-credit-card"></i> Aceptamos todas las
+                    tarjetas
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-truck-fast"></i> Envios a todo el país
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="cotenedor_derecho_final">
+            <% if (locals.userLogin) { %>
+            <a class="btn btn-secondary" href="/products/cart">Agregar al Carrito</a>
+          </div>
+
+          <div class="editar-eliminar">
+            <% if (locals.userLogin.rolId === 1){ %>
+            <div>
+              <button>
+                <a href="/products/edit/<%= product.id %>" class="">Editar</a>
+              </button>
+            </div>
+            <div>
+              <form
+                action="/products/delete/<%= product.id %>?_method=DELETE"
+                method="POST"
+              >
+                <button type="submit" class=" ">Eliminar</button>
+              </form>
+            </div>
+            <% } %> <% } %>
+          </div>
+        </div>
+      </div>
     </main>
 
-    <%- include('./partials/footer') %> 
-</body>
-
+    <%- include('./partials/footer') %>
+    <%- include('./partials/scripts') %>
+  </body>
 </html>
