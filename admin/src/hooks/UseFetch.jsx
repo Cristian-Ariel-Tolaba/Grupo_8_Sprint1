@@ -11,12 +11,19 @@ const UseFetch = async(endpoint, method = 'GET', data, token) => {
     if(method === 'GET'){
         response = await fetch(url)
     }
-    if(method === 'POST'){
+    if(method === 'POST' || method === "PATCH"){
         response = await fetch(url,{
             method,
-            body: JSON.stringify(data),
+            body: data,
             headers: {
-                'Content-type': 'application/json',
+                Authorization: token
+            }
+        })
+    }
+    if(method === 'DELETE'){
+        response = await fetch(url,{
+            method,
+            headers: {
                 Authorization: token
             }
         })

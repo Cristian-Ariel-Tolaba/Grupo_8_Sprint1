@@ -35,7 +35,7 @@ module.exports = {
             });
           };
 
-          db.Order.findOne({
+       /*    db.Order.findOne({
             where: {
               userId: req.session.userLogin.id,
               statusId: 1,
@@ -78,8 +78,8 @@ module.exports = {
                 
             }
             return res.redirect("/");
-          }).catch(error => console.log(error));
-
+          }).catch(error => console.log(error)); */
+          return res.redirect("/");
         });
         
     } else {

@@ -94,12 +94,21 @@ $('avatar').addEventListener('change', function(e){
         msgError("avatar","Debes subir una imagen",e);
         break;
         default:
+            let reader = new FileReader();
+            reader.readAsDataURL(this.files[0])
+            reader.onload = () => {
+                $('avatar-preview').src = reader.result
+            }
+            
             validField("msgAvatar",e)
             break;
     }
     
     checkFields()
 });
+
+checkFields()
+
 
 
 
