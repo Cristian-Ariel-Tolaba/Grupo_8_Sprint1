@@ -2,11 +2,19 @@
 
 const categories = [
   {
-    name : 'Destacados',
+    name : 'Tinto',
     createdAt: new Date()
   },
   {
-    name : 'Ofertas',
+    name : 'Blanco',
+    createdAt: new Date()
+  },
+  {
+    name : 'Rosado',
+    createdAt: new Date()
+  },
+  {
+    name : 'Espumoso',
     createdAt: new Date()
   }
 ]

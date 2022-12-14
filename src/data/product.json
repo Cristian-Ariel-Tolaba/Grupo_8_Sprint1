@@ -13,7 +13,7 @@
        "name": "Anima Negra",
        "price": 2900,
        "discount": 25,
-       "categoryId": 2,
+       "categoryId": 1,
        "description": "Se expresa a su manera, ya sin complejos, ligero y delicado en cuerpo y en color, muy frutal y floral en nariz, sorprendente elegante y complejo en boca, con muchos frutos rojos, más notas florales y amplios especiados."
        
     },
@@ -22,7 +22,7 @@
        "name": "Cadalso",
        "price": 3080,
        "discount": 0,
-       "categoryId": 1 ,
+       "categoryId": 2 ,
        "description": "Un vino que te apetece tomar con la mente abierta, sin patrones preconcebidos. Aromático, con notas a ciruela pasa, violetas y especias como el clavo y la pimienta negra. Enamora con el paso en boca, con sus característicos toques minerales y el tanino amable."
        
     },
@@ -40,7 +40,7 @@
        "name": "Do Conca",
        "price": 3100,
        "discount": 0,
-       "categoryId": 1,
+       "categoryId": 3,
        "description": "Se expresa a su manera, ya sin complejos, ligero y delicado en cuerpo y en color, muy frutal y floral en nariz, sorprendente elegante y complejo en boca, con muchos frutos rojos, más notas florales y amplios especiados."
       
     },
@@ -49,7 +49,7 @@
        "name": "Lava",
        "price": 7310,
        "discount": 50,
-       "categoryId": 2,
+       "categoryId": 3,
        "description": "Es un vino que expresa muy bien el objetivo que persiguen con estos vinos, ya que tiene una nariz fragante y floral, con gran expresión de frutos del bosque y notas algo balsámicas. Su boca es de cuerpo medio y refrescante, frutal en su recorrido y deja para el final unos toques minerales y ciertos recuerdos a hierbas aromáticas."
        
     },
@@ -58,7 +58,7 @@
        "name": "Loba",
        "price": 4800,
        "discount": 0,
-       "categoryId": 1,
+       "categoryId": 4,
        "description": "Un vino con carácter de territorio, lleno de frutas rojas maduras, profundidad de tierra y un toque de violetas. El paladar no es masivo pero está ligado con firmeza por su carácter ígneo y una calidad remarcable."
        
     },
@@ -67,7 +67,7 @@
        "name": "Terrerazo",
        "price": 4100,
        "discount": 35,
-       "categoryId": 2,
+       "categoryId": 4,
        "description": "Es un vino que expresa muy bien el objetivo que persiguen con estos vinos, ya que tiene una nariz fragante y floral, con gran expresión de frutos del bosque y notas algo balsámicas. Su boca es de cuerpo medio y refrescante, frutal en su recorrido y deja para el final unos toques minerales y ciertos recuerdos a hierbas aromáticas."
        
     }

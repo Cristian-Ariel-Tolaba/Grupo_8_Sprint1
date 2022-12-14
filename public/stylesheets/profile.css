@@ -1,204 +1,24 @@
-* {
-    box-sizing: border-box;
+.profile{
+    background-image: url('/images/fondo-profile.jpg');
+         background-attachment: fixed;
+         background-size: cover;
+     background-repeat: no-repeat;
 }
-
-body {
-    margin: 0px;
-    padding: 0;
-}
-
-
-
-/*header*/
-header {
-    border: 5px solid black;
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/Banner.webp");
-}
-
-#header {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-#header img {
-    width: 110px;
-}
-
-#header input {
-    width: 120px;
-    height: 20px;
-    border: 2px solid black;
+.profile__main {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 450px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
     border-radius: 10px;
-    padding: 3px;
 }
 
-#header button {
-    border: 1px solid black;
-    border-radius: 10px;
-    font-family: "roboto";
-    font-weight: bold;
-    padding: 3px;
-}
-
-
-
-.header-nav ul {
-    display: flex;
-    justify-content: space-between;
-    margin-right: 20px;
-}
-
-.header-nav a {
-    color: azure;
-    font-family: "open sans";
-    text-decoration: none;
-}
-
-#welcome-img img {
-    width: 100%;
-    margin-top: 5px;
-    border: 5px solid black;
-}
-
-h1 {
-    color: azure;
-    text-align: center;
-    font-family: "open sans";
-}
-
-/*main*/
-
-main {
-    height: 550px;
-    background-image: url("/images/Banner.webp");
-    background-size: 600px;
-    background-position: center;
-}
-
-.mi_perfil {
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.mi_perfil_foto img {
+.profile__main--imagen {
     width: 150px;
-    border-radius: 80px;
+    margin: 0 auto;
+ 
 }
 
-
-.mi_perfil_informacion {
-    margin-left: 80px;
-
-}
-
-
-h1 {
-    margin: 0px;
-}
-
-.inputContainer {
-    color: white;
-}
-
-.inputContainer input {
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
-
-.inputContainer button {
-    margin-top: 20px;
-    margin-left: 20px;
-}
-
-/*footer*/
-
-footer {
-
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/VinoYSeFue.jpg");
-    border: 3px solid black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 100%;
-    font-family: "roboto";
-}
-
-#footer img {
-    margin-left: 16px;
-}
-
-#footer ul {
-    display: flex;
-    justify-content: center;
-    margin-right: 10px;
-    margin-bottom: 20px;
-}
-
-#footer a {
-    text-decoration: none;
-    color: azure;
-}
-
-footer p {
-    font-size: 8px;
-    margin-bottom: 10px;
-    color: azure;
-}
-
-@media (min-width: 768px) {
-
-    #header input {
-        width: 380px;
-    }
-
-
-    main {
-        height: 580px;
-    }
-
-    .mi_perfil {
-        backdrop-filter: blur(10px);
-        height: 580px;
-        width: 400px;
-        margin-left: 210px;
-
-    }
-
-    .inputContainer button {
-
-        margin-left: 35px;
-    }
-}
-
-@media (min-width: 1024px) {
-
-    #header input {
-        width: 500px;
-    }
-
-    main {
-        height: 640px;
-        padding: 20px;
-    }
-
-    .mi_perfil {
-        width: 500px;
-        height: 600px;
-        margin-left: 280px;
-
-    }
-
-    .inputContainer label {
-        font-size: 20px;
-    }
-
-    .inputContainer input {
-        width: 300px;
-    }
+.profile__main--imagen img{
+    border-radius: 50%;
 }

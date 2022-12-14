@@ -1,26 +1,27 @@
-<header>
-    <div id="header">
+<header class="header">
         
-        <a href="/"><img src="/images/imagen-logo.png" alt="Logo"></a>
+        <a href="/"><img class="header__logo" src="/images/imagen-logo.png" alt="Logo"></a>
+        <button class="header__btn--menu btn btn-outline-light mb-3" onclick="document.querySelector('.header__form').classList.toggle('show'); document.querySelector('.header__nav').classList.toggle('show');"><i class="fas fa-bars"></i></button>
         
-        <form action="/search" method="get">
-            <input type="text" name="keywords">
-            <button type="submit">Buscar...</button>
-        </form>
-    </div>
-    <div class="header-nav">
+        <div class="header__form">
+            <form action="/search" method="get" class="header__form">
+                <input type="text" name="keywords" class="form-control">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <ul class="d-flex justify-content-between mt-2">
+                <li><a href="#destacados">Destacados</a></li>
+                <li><a href="#ofertas">Ofertas</a></li>
+                <li><a href="#variedades">Variedades</a></li>
+            </ul>
+        </div>
+      
 
-        <nav>
-            <ul type="none">
+        <nav class="header__nav mt-md-5">
+            <ul class="header__nav--menu">
 
                <% if (locals.userLogin) { %>
                     <li><a href="/users/profile">Hola <%= locals.userLogin.firstname %> !</a></li>
-                    <li id="btn-cart"><button type="button" class="btn fs-4" data-bs-toggle="modal" data-bs-target="#cartModal">Mi carrito</i></button></li>
-                    
-                    <% if (locals.userLogin.rolId === 1){ %>                       
-                        <li><a href="/products/create">Nuevo Producto</a></li>                       
-                    <% } %>
-
+                    <li> <a href="" id="btn-cart" data-bs-toggle="modal" data-bs-target="#cartModal">Mi carrito</a></li>
                     <li><a href="/users/logout">Salir</a></li>
 
                 <% }else {%>
@@ -29,8 +30,9 @@
                 <% } %>
                
             </ul>
+           
         </nav>
-    </div>
+       
     <%- include('./modalCart') %> 
 
 </header>

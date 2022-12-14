@@ -8,14 +8,12 @@ const SideBar = () => {
       id="accordionSidebar"
     >
       <Link
-        className="sidebar-brand " to="/">
-        <div className="sidebar-brand-icon">
+        className="sidebar-brand" to="/">
           <img
-            className="w-100"
             src="/images/logo.png"
             alt=""
+            style={{width:'100px'}}
           />
-        </div>
       </Link>
 
       <hr className="sidebar-divider mt-0 mt-4" />
@@ -40,7 +38,7 @@ const SideBar = () => {
 
       <li className="nav-item">
         <Link className="nav-link" to="/users">
-          <i className="fas fa-fw fa-chart-area"></i>
+          <i className="fas fa-fw fa-users"></i>
           <span>Usuarios</span>
         </Link>
       </li>

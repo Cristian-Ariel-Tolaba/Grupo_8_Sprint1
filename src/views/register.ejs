@@ -1,85 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
     
-    <%- include('./partials/head',{title: 'Registrate', stylesheets: 'register.css'})%> 
+    <%- include('./partials/head',{title: 'Registrate', stylesheets: 'styles.css'})%> 
 
-<body>
+<body class="register">
 
     <%- include('./partials/header') %> 
-
-    
-
-        <div class="registroForm">
-
+    <main class="register__main mt-4">
 
             <form action="" class="form" method="post" enctype="multipart/form-data" id="form-register">
 
                 
               <h1 class="title">Regístrate</h1>
-        
-                    <div class="inputContainer"> 
+                <hr>
+                    <div class="mb-3"> 
 
                         <input type="text" class="form-control" id="firstname" name="firstname"
                         value="<%= locals.old && old.firstname ? old.firstname : null %>" placeholder="Nombre">
                        
                     </div>
-                    <p class="form__error__msg">
+                    <p class="text-danger">
                         <%= locals.errors && errors.firstname ? errors.firstname.msg : null %>
                     </p>
-                    <p id="msgFirstname"></p>
+                    <p class="text-danger" id="msgFirstname"></p>
 
-                    <div class="inputContainer">
+                    <div class="mb-3">
                         <input type="text" class="form-control"  id="lastname" name="lastname" autocomplete="off"
                         value="<%= locals.old && old.lastname ? old.lastname : null %>" placeholder="Apellido">
                        
                     </div>
-                    <p class="form__error__msg">
+                    <p class="text-danger">
                         <%= locals.errors && errors.lastname ? errors.lastname.msg : null %>
                     </p>
-                    <p id="msgLastname"></p>
+                    <p class="text-danger" id="msgLastname"></p>
 
-                    <div class="inputContainer">
+                    <div class="mb-3">
                         <input type="email" class="form-control" id="email" name="email" autocomplete="off"
                         value="<%=locals.old && old.email ? old.email : null %>" placeholder="Email">
                        
                     </div>
-                    <p class="form__error__msg">
+                    <p class="text-danger">
                         <%= locals.errors && errors.email ? errors.email.msg : null %>
                     </p>
-                    <p id="msgEmail"></p>
+                    <p class="text-danger" id="msgEmail"></p>
 
-                    <div class="inputContainer">
+                    <div class="mb-3">
                         <input type="password" class="form-control" id="password" name="password" autocomplete="off" placeholder="Contraseña">
                         
                     </div>
-                    <p class="form__error__msg">
+                    <p class="text-danger">
                         <%= locals.errors && errors.password ? errors.password.msg : null%>
                     </p>
-                    <p id="msgPassword"></p>
+                    <p class="text-danger" id="msgPassword"></p>
         
-                    <div class="inputContainer">
+                    <div class="mb-3">
                         <input type="password" class="form-control" id="password2" name="password2" autocomplete="off" placeholder="Confirmá tu contraseña">
                     
                     </div>
-                    <p class="form__error__msg">
+                    <p class="text-danger">
                         <%= locals.errors && errors.password2 ? errors.password2.msg : null%>
                     </p>
-                    <p id="msgPassword2"></p>
+                    <p class="text-danger" id="msgPassword2"></p>
 
-                    <div class="inputContainer">
-                        <label for="avatar" id="btn-register">Imagen de perfil</label>
-                        <input hidden type="file" name="avatar" id="avatar" class="form-control">
-                        <p id="msgAvatar"></p>
+                    <div class="mb-3 text-end" >
+                        <button type="submit" class="btn btn-dark" id="btn-submit" disabled>Registrarse</button>
+
                     </div>
-
-                    <div class="inputContainer" >
-                        <button type="submit" id="btn-submit" disabled>Registrarse</button>
-                        <a href ='/users/login'>¿Ya tiene una cuenta?</a>
+                    <div class="text-center">
+                        <p class="">¿Ya tienes cuenta? <a class="" href="/users/login">Inicia sesión</a></p>
                     </div>
 
                 </form>
 
-          </div>
+            </main>
 
     <%- include('./partials/footer') %> 
 

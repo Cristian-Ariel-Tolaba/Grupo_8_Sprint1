@@ -10,8 +10,8 @@ const Root = () => {
       <SideBar />
 
       <div id="content-wrapper" className="d-flex flex-column">
-        <div id="content">
-          <TopBar/>
+        <div id="content" className="mt-2">
+         {/*  <TopBar/> */}
           <Outlet/>
         </div>
 
