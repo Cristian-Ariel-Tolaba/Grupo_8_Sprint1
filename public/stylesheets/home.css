@@ -20,7 +20,7 @@
     width: 300px;
     margin: 0 auto;
 }
-.home__main h1{
+.home__main h1, h3{
     font-family: 'Kalam', cursive;
     font-weight: 700;
     margin: 20px 0;

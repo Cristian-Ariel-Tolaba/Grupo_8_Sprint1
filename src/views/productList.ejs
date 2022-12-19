@@ -1,34 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include('./partials/head', {title: 'Todos los productos', stylesheets: 'home.css'}) %> 
-<body>
+<body class="home">
     <%- include('./partials/header') %> 
-   <main>
-        <div id="welcome-img">
-            <img src="/images/banner-inicio.png" alt="">
-        </div>
-        <h1>Nuestros productos</h1>
 
-        <div class="main-products">
-            <!--<h1>Todos los productos</h1>--> 
+    <main class="home__main">
 
-            <% products.forEach(({id, name,images,price, discount,description}) => { %>
+        <section class="home__main__products row mt-4">
+          
+            <img class="home__main__img--decorativa" src="/images/lineaDecorativaSuperior.png" alt="">
+            <h1>Nuestros Productos</h1>
 
-            <div class="main-products">
-                <img src="/images/<%=images[0].file%>" alt="">
-                <h2><%= name%> </h2>
-                <p>$<%=toThousand(price) %></p>
-                <p>"<%= description %>"</p>
-                <form action="">
-                    <button><a href="/products/detail/<%= id %>">Ver mas</a></button>
-                </form>
+          <% products.forEach(({id, name, images, price, discount,description})=> { %>
+            <div class="col-12 col-md-6 col-lg-3 p-4">
+              <a href="/products/detail/<%=id%>">
+                <article class="home__main__products__article ">
+                  <div class="home__main__products__article--image">
+                    <img class="img-fluid" src="/images/<%=images[0].file%>" alt="" />
+                  </div>
+                 
+                  <div>
+                    <h2 class="mt-3">
+                      <%= name %>
+                    </h2>
+
+                    <div class="col-12 detail__main__btn--cart ">
+
+                      <a class="" href="/products/cart">
+                        <p class="m-0 fs-5">LO QUIERO!</p> </i>
+                      </a>
+                    </div>
+                    <hr class="my-1">
+
+                    <h3>$ <%=toThousand(price) %>
+                    </h3>
+                  </div>
+
+
+                </article>
+              </a>
+
             </div>
 
+
             <% }) %>
-            
-           
-        </div>
-   </main>
+              <div class="home__main__products--back col-12 ">
+                <a href="#">
+                  <button class="btn btn-sm btn-outline-light"><i class="fa fa-arrow-up"></i></button>
+                </a>
+
+
+              </div>
+        </section>
+        
+    </main>
    
    <%- include('./partials/footer') %> 
 

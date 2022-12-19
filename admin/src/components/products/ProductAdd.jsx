@@ -131,7 +131,7 @@ export const ProductAdd = ({ handlerAdd }) => {
           className="form-control" 
           name="discount" 
           onChange={handlerInputChange}
-          value = {0}
+          defaultValue = {0}
           />
         </div>
         <div className="col-12 mb-3">

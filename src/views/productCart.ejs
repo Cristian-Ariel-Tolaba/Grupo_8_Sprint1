@@ -1,81 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<%- include('./partials/head',{stylesheets: 'productCart.css'})
+<%- include('./partials/head',{ title: 'Resultado de tu busqueda',stylesheets: 'home.css'})
  %> 
-
-<body class="body__productCart">
-
+<body class="home">
     <%- include('./partials/header') %> 
-     
-       <main class="cart-main">
 
-        <%- include('./partials/baner') %>
 
-         <section>
-             <nav class="SubTitle">
-                 <a href="#">Carrito</a>
-                 <a href="#">Favoritos</a>
-                 <hr class="linea-sup">
-             </nav>
-             
-           
+        <main class="home__main">
+
+            <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="cartModalLabel">Mi Compra</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="box-cart">
+                      <table class="table" id="cart-box">
+                        <thead>
+                          <tr>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Subtotal</th>
+                          </tr>
+                        </thead>
+                        <tbody id="cart-items">
+                       
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex justify-content-between gap-2">
+                            <button type="button" class="btn btn-danger">Vaciar carrito</button>
             
-             <article class="product-container">
-                 <img src="/images/agala.jpeg" alt="Foto remeraLOL">
-                 <h2>Nombre Vino</h2>
-                 <h3>$2.100</h3>
-                 <p>por unidad $1.050</p>
-             </article>
-                 <div class="contador">
-                 <input type="number" id="number" value="1" min="1" max="100">
-                 </div>
-                 <div class="3-puntos">
-                 
-                 </div>
-                 <hr class="linea">
- 
-             <article class="product-container">
-                 <img src="/images/cadalso.jpeg" alt="Foto pantalonG" style="width: 110px; height: 110px;">
-                 <h2>Nombre Vino</h2>
-                 <h3>$2.900</h3>
-                 <p>por unidad $1.450</p>
-             </article>
-                 <div class="contador">
-                 <input type="number" id="number" value="1" min="1" max="100">
-                 </div>
-                 <hr class="linea">
- 
-             <article class="product-container">
-                 <img src="/images/agala.jpeg" alt="Foto remeraGOT">
-                 <h2>Nombre Vinos</h2>
-                 <h3>$2.800</h3>
-                 <p>por unidad $1.400</p>
-             </article>
-                 <div class="contador">
-                 <input type="number" id="number" value="1" min="1" max="100">
-                 </div>
-                 <hr class="linea">
- 
-             <article class="product-container">
-                 <img src="/images/castillo.jpeg" alt="Foto mediasLOL" >
-                 <h2>Nombre Vino</h2>
-                 <h3>$3.000</h3>
-                 <p>por unidad $1.500</p>
-             </article>
-                 <div class="contador">
-                 <input type="number" id="number" value="1" min="1" max="100">
-                 </div>
-             <hr class="linea">
-             <article class="total-container">
-             <div class="total">
-             <h4>Total</h4>
-             <h5>$10.800</h5>
-             </div>
-             <button class="boton-compra">Comprar</button>
-             </article>
+                            <div class="d-flex gap-2">
+                                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Seguir comprando</button>
+                                <button type="button" class="btn btn-primary">Terminar compra</button>
+                            </div>
+                        </div>
+                    
+                    </div>
+                  </div>
+                </div>
+              </div>
         </main>
    
-     <%- include('./partials/footer') %>
-</body>
-</html>
+    <%- include('./partials/footer') %> 
+
+ 
+ </body>
+ </html>
